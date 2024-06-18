@@ -4,6 +4,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
+from django.shortcuts import render
 
 
 class DashboardView(APIView):
@@ -24,3 +25,14 @@ class LogoutView(APIView):
         request.user.auth_token.delete()
         print("Logging out")
         return Response(status=status.HTTP_200_OK)
+
+
+class LoginView(APIView):
+    """A class to server the login page."""
+    def get(request):
+        """A function to handle all login requests"""
+        return render('login.html')
+    
+    def post(request):
+        """A function to server the frontend if the user has the right tokens"""
+        return render('index.html')
