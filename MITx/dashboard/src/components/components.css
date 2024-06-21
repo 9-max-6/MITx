@@ -1,0 +1,77 @@
+.Navbar{
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-color: #1d2c4c;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 80px;
+    box-sizing: border-box;
+    height:500px;
+    align-items: baseline;
+}
+.Navbar Link 
+{
+    color: #f1f7fd;
+    text-decoration: none;
+}
+.Navbar ul
+{
+    width: 100%;
+    display: flex;
+    color: #f1f7fd;
+    justify-content: space-between;
+}
+.Navbar ul li
+{
+    list-style: none;
+    margin: 0 10px;
+    color: #f1f7fd;
+    font-weight: 500;
+    font-size: large;
+    font-family: 'proxima soft', 'sans-serif';
+    text-transform: capitalize;
+}
+.Navbar Button:hover
+{
+    background-color: #000000;
+}
+.Navbar Button li:hover
+{
+    color: #3a79d6;
+}
+.Navbar .farLeft
+{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.Navbar .farLeft .logo
+{
+    background-image: url('../../public/skill-smart-working.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+}
+.Navbar .farRight
+{
+    display: flex;
+    gap: 16px;
+    justify-content: flex-start;
+    align-items: top;
+}
+.Navbar .farRight Button{
+    font-size: large;
+    margin-top: 0px;
+    align-self: flex-start;
+    color: red;
+
+}
+.Navbar .farRight Button:hover{
+    box-shadow: 1px 3px 24px -6px rgba(255,0,0,0.75);
+-webkit-box-shadow: 1px 3px 24px -6px rgba(255,0,0,0.75);
+-moz-box-shadow: 1px 3px 24px -6px rgba(255,0,0,0.75);
+
+}

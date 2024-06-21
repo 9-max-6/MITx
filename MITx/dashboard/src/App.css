@@ -1,0 +1,23 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.app {
+  box-sizing: border-box;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: calc(100% - 128px);
+  padding: 16px;
+  margin: 128px auto 0 auto;
+  background-color: #f1f7fd;
+  box-sizing: border-box;
+  border-radius: 16px;
+}

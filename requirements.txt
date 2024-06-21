@@ -1,0 +1,14 @@
+django
+djangorestframework
+django-allauth
+dj-rest-auth
+react
+axios
+mui
+emotion
+langchain
+openai
+langchain_community
+langchain-openai
+langchain-core
+
