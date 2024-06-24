@@ -1,3 +1,4 @@
+import json
 from langserve import RemoteRunnable
 
 remote_chain = RemoteRunnable("http://localhost:8000/chain/")
@@ -29,5 +30,22 @@ html_content = '<p><b>SELECTION OF CONSULTING FIRMS BY THE WORLD BANK GROUP \
                                                 should emphasize </span></i><i><span style="font-size:10pt;l \
                                                 ine-height:107%">five criteria, commonly referred to as the 2018 OECD </span></i><i><span style="font-size:10pt;line-height:107%"><a href="https://www.oecd.org/dac/evaluation/2754804.pdf" rel="nofollow">DAC criteria</a></span></i><i><span style="font-size:10pt;line-height:107%">, </span></i><i><span style="font-size:10pt;line-height:107%">most widely used to\r\nevaluate development interventions—i.e. relevance, efficiency, effectiveness,\r\nimpact and sustainability.  In addition,\r\nthe evaluators should refer to the </span></i><i><span style="font-size:10pt;line-height:107%"><a href="http://www.unevaluation.org/document/detail/1914" rel="nofollow"><span style="color:rgb( 0 , 108 , 183 )">Norms and Standards for Evaluation in the UN System</span></a></span></i><i><span style="font-size:10pt;line-height:107%;color:rgb( 69 , 69 , 69 )">, </span></i><i><span style="font-size:10pt;line-height:107%"><a href="http://www.uneval.org/document/download/2107" rel="nofollow"><span style="color:rgb( 0 , 108 , 183 )">UNEG\r\nGuidance on Integrating Human Rights and Gender Equality in Evaluation,</span></a>\r\nto ensure the incorporation of a human rights lens.  </span></i><i><span style="font-size:10pt;line-height:107%"></span></i></p>\r\n\r\n</div>\r\n\r\n</div><p></p><p><b>FUNDING SOURCE</b></p><p>The World Bank Group intends to finance the assignment / services described below under the following:</p><ul><li>TF073224: NTF</li></ul><p><b>ELIGIBILITY</b></p><p>Eligibility restrictions apply:</p><ul><li>[Please type list of restrictions]</li></ul><p><b>SUBMISSION REQUIREMENTS</b></p><p>The World Bank Group invites eligible firms to indicate their interest in providing the services.  Interested firms must provide information indicating that they are qualified to perform the services (brochures, description of similar assignments, experience in similar conditions, availability of appropriate skills among staff, etc. for firms; CV and cover letter for individuals).  Please note that the total size of all attachments should be less than 5MB.  Firms may associate to enhance their qualifications unless otherwise stated in the solicitation documents. Where a group of firms associate to submit an EOI, they must indicate which is the lead firm. If shortlisted, the firm identified in the EOI as the lead firm will be invited to the request for proposal (RFP) phase.</p><p>Expressions of Interest should be submitted, in English, electronically through <a href="https://wbgeprocure-rfxnow.worldbank.org/rfxnow" rel="nofollow">WBGeProcure RFx Now</a></p><p><b>NOTES</b></p><p>Following this invitation for EOI, a shortlist of qualified firms will be formally invited to submit proposals. Shortlisting and selection will be subject to the availability of funding.</p><p>Only those firms which have been shortlisted will be invited to participate in the RFP phase. No notification or debrief will be provided to firms which have not been shortlisted.</p><p>If you encounter technical difficulties while uploading documents, please send an e-mail to the Help Desk at \
                                                     <a href="corporateprocurement&#64;worldbank.org" rel="nofollow">corporateprocurement&#64;worldbank.org</a> prior to the submission deadline.</p>'
-result = remote_chain.invoke({"html_content": html_content})
+
+json_response_raw = {
+  "summary": "A summary of the opportunity...",
+  "main": "The main content of the opportunity...",
+  "procedure": "Application procedures...",
+  "size": "$10000",
+  "deadline": "2024-06-21",
+  "org": "The World Bank Group",
+  "country": "Burundi",
+  "date_published": "2024-06-21" ,
+  "relevant_links": {"name1": "link1", "name2": "link3"},
+}
+json_response = json.dumps(json_response_raw)
+
+result = remote_chain.invoke({
+    "html_content": html_content,
+    "json_response": json_response
+    })
 print(result)

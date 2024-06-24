@@ -1,0 +1,10 @@
+.dashboardGrid {
+    border-radius: 12px;
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    justify-content: center;
+    align-items: center;
+}
+

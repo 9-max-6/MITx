@@ -14,22 +14,16 @@ class Opportunity(models.Model):
     users = models.ManyToManyField(
         User,
         related_name='opportunities', 
-        null=True
     )
     title  = models.CharField(
         "Opportunity's title",
         max_length=200,
-
     )
-    org  = models.CharField(
-        "Opportunity's org",
-        max_length=200,
-
-    )
+   
     ref_number  = models.CharField(
         "Opportunity's ref_number",
         max_length=200,
-
+        blank=True,
     )
     rel_score = models.IntegerField(
         "Opportunity's relevance score",
@@ -47,23 +41,17 @@ class Opportunity(models.Model):
     )
     size = models.IntegerField(
         "Opportunity's size",
-        blank=False
+        blank=True,
+        null=True
     )
     deadline = models.DateField(
         auto_now=False,
         auto_now_add=False
     )
-    date_published = models.DateField(
-        auto_now=False,
-        auto_now_add=False
-    )
-    summary = models.TextField()
     website_link = models.URLField(null=True, blank=True)
-    intro = models.TextField()
-    main = models.TextField()
-    conclusion = models.TextField()
-    procedure = models.TextField()
+    page = models.JSONField(null=True, blank=True)
+
 
     def __str__(self):
         """String rep of object"""
-        return f"{self.title} - {self.org} - {self.country} - {self.deadline} - {self.summary} - {self.website_link} - {self.rel_score} - {self.size} - {self.website_name} - {self.intro} - {self.main} - {self.conclusion} - {self.procedure}"
+        return f"{self.title}"

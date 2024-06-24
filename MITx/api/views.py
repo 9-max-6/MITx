@@ -33,7 +33,8 @@ class LoginView(APIView):
     """A class to server the login page."""
     def get(self, request):
         """A function to handle all login requests"""
-        return render('login.html')
+        context = {}
+        return render(request, 'api/login.html', context)
     
     def post(self, request):
         """A function to server the frontend if the user has the right tokens"""
