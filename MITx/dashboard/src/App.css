@@ -12,13 +12,9 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: calc(100% - 128px);
   padding: 16px;
-  margin: 128px auto 0 auto;
   background-color: #f1f7fd;
   box-sizing: border-box;
   border-radius: 16px;
-  box-shadow: 1px 2px 19px 6px rgba(0,0,0,0.2);
--webkit-box-shadow: 1px 2px 19px 6px rgba(0,0,0,0.2);
--moz-box-shadow: 1px 2px 19px 6px rgba(0,0,0,0.2);
+  
 }

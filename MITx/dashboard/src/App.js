@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 import Dashboard from "../../dashboard/src/components/Dashboard";
 import Opportunities from "./components/Opportunities";
 import Bids from "../../dashboard/src/components/Bids";
@@ -11,8 +12,15 @@ import "./App.css";
 import HelpIcon from "@mui/icons-material/Help";
 import Topbar from "./components/Topbar";
 import { Box } from "@mui/material";
+import { AuthContext } from "./components/Auth/AuthContext";
+import ProtectedRoute from "./components/Auth/ProtectedRoute";
+import Login from "./components/Login";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const [loaded, setloaded] = useState(true);
+  const navigate = useNavigate();
+  const { isAuthenticated } = useContext(AuthContext);
   return (
     <div className="app">
       <Box
@@ -32,16 +40,66 @@ function App() {
       </Box>
       <Topbar />
       <main className="main">
-        <div className="mainContent">
+        <Box
+          className="mainContent"
+          sx={{
+            width: isAuthenticated ? "calc(100% - 128px)" : "100%",
+            margin: isAuthenticated ? "128px auto 0 auto" : "0px",
+          }}
+        >
           <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/opps" element={<Opportunities />} />
-            <Route path="/bids" element={<Bids />} />
-            <Route path="/archive" element={<Archive />} />
-            <Route path="/faq" element={<Faq />} />
-            <Route path="/settings" element={<Settings />} />
+            <Route path="/login" element={<Login />} />
+            <Route
+              path="/"
+              element={
+                <ProtectedRoute>
+                  <Dashboard />
+                </ProtectedRoute>
+              }
+              exact
+            />
+            <Route
+              path="/opps"
+              element={
+                <ProtectedRoute>
+                  <Opportunities />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/bids"
+              element={
+                <ProtectedRoute>
+                  <Bids />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/archive"
+              element={
+                <ProtectedRoute>
+                  <Archive />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/faq"
+              element={
+                <ProtectedRoute>
+                  <Faq />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <ProtectedRoute>
+                  <Settings />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
-        </div>
+        </Box>
       </main>
     </div>
   );

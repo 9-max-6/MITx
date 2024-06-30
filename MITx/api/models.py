@@ -1,6 +1,16 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import AbstractUser
 import uuid
+
+class User(AbstractUser):
+    name = models.CharField(max_length=255)
+    email= models.CharField(max_length=255, unique=True)
+    password = models.CharField(max_length=255)
+    username = None
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
 
 class Opportunity(models.Model):
     """A class to represent the opportunity table
@@ -10,6 +20,9 @@ class Opportunity(models.Model):
         primary_key=True,
         default=uuid.uuid4,
         editable=False
+    )
+    date_created = models.DateTimeField(
+        auto_now=True
     )
     users = models.ManyToManyField(
         User,
@@ -46,7 +59,8 @@ class Opportunity(models.Model):
     )
     deadline = models.DateField(
         auto_now=False,
-        auto_now_add=False
+        auto_now_add=False,
+        null=True
     )
     website_link = models.URLField(null=True, blank=True)
     page = models.JSONField(null=True, blank=True)

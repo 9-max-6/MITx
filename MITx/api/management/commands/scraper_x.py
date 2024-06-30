@@ -5,6 +5,7 @@ from ...models import Opportunity
 from django.core.management.base import BaseCommand
 from api.models import Opportunity
 from langserve import RemoteRunnable
+from openai import BadRequestError
 
 
 class Page():
@@ -107,7 +108,10 @@ class Page():
         """A size setter"""
         if value and value != 'None':
             int_size = value.split(" ")
-            self.__size = int(int_size[1])
+            try:
+                self.__size = int(int_size[1])
+            except ValueError:
+                self.__size = None
         else:
             self.__size = None
     
@@ -189,6 +193,16 @@ class BaseOpportunity():
         }
         return opportunity_object
 
+    def json_dump(self):
+        """A function to generate the json for dump"""
+        json_dump_object = {
+            "title": self.title,
+            "website_name": self.website_name,
+            "website_link": self.website_link,
+            "html": self.html
+        }
+        return json_dump_object
+
     def get_relscore(self):
         """A function to determine rel_score"""
         return 1
@@ -262,7 +276,8 @@ class BaseScraper():
     website_name = ""
     
     headers = {}
-    existing_ref_nums = Opportunity.objects.values('ref_number')
+    existing_ref_nums_set = Opportunity.objects.values('ref_number')
+    existing_ref_nums = [set_member.get('ref_number') for set_member in existing_ref_nums_set]
     existing_titles = Opportunity.objects.filter(
         website_name='GTAI'
         ).values_list(
@@ -281,7 +296,7 @@ class GTAI(BaseScraper):
         if tenders is None:
             tenders = []
 
-        if count == 100:
+        if count == 10:
             return self.get_details(tenders)
 
         if next_page:
@@ -347,8 +362,8 @@ class RFXNow(BaseScraper):
         """a function to get the json objects from RFXNow"""
         with requests.get(url, headers=self.headers) as resp:
             if resp.status_code == 200:
-                json = resp.json()
-                return self.check_opps(json)
+                json_response = resp.json()
+                return self.check_opps(json_response.get("advertisementList"))
             else:
                 resp.raise_for_status()
     
@@ -356,10 +371,11 @@ class RFXNow(BaseScraper):
         """A function to check with opportunities are new"""
         opportunities = self.existing_ref_nums
         new_ops = []
-        for opp in opps.get('advertisementList', None):
+        for opp in opps:
             if opp and opp.get('procurementNumber') not in opportunities:
+                print(opportunities)
+                print("found new opportunity", opp.get('procurementNumber'))
                 new_ops.append(opp)
-
         return self.transform_ops(new_ops)
     
     def transform_ops(self, opps):
@@ -400,28 +416,43 @@ class Command(BaseCommand):
     }
     def handle(self, *args, **kwargs):
         """A function to scrape"""
-        opportunities_gtai = self.gtai.recursive_scraper(self.gtai.baseurl)
+        # opportunities_gtai = self.gtai.recursive_scraper(self.gtai.baseurl)
         opportunities_rfx = self.rfx.rfx_scraper(self.rfx.baseurl)
-        payload = opportunities_rfx + opportunities_gtai
-        return self.query_batch(payload)
+        if opportunities_rfx:
+            payload = opportunities_rfx
+            return self.query_batch(payload)
+        else:
+            return
     
     def db_write(self, opportunity):
         """A function to save to the database"""
-        new_opportunity = Opportunity(**opportunity)
-        new_opportunity.save()
+        for key, value in opportunity.items():
+            if value == 'None':
+                opportunity[key] = None
+        try:
+            new_opportunity = Opportunity(**opportunity)
+            new_opportunity.save()
+            print("Saving opportunity")
+        except:
+            pass
 
     def query_batch(self, payload):
         """A function to query the AI agent"""
+        print("Running query batch on payload size {} ".format(len(payload)))
         for opportunity in payload:
             # The extracted output must have the name page and be a single dictionary
             # of fields extracted from the html content 
-            page = self.query_ai(opportunity.html)
-            opportunity.page = page
-            self.opportunity_structure.update(opportunity.get_json())
-            print(self.opportunity_structure)
-            self.db_write(self.opportunity_structure)
+            page = self.query_ai(opportunity.html, opportunity)
+            if page:
+                opportunity.page = page
+                self.opportunity_structure.update(opportunity.get_json())
+                print(self.opportunity_structure)
+                self.db_write(self.opportunity_structure)
+            else:
+                print("Page is none")
 
-    def query_ai(self, html_content):
+
+    def query_ai(self, html_content, opportunity_object):
         """A function to query the AI agent"""
         remote_chain = RemoteRunnable("http://localhost:5000/chain/")
         json_response_raw = {
@@ -437,15 +468,19 @@ class Command(BaseCommand):
           "ref_number": "1234567890"
         }
         json_response = json.dumps(json_response_raw)
+        print(html_content)
 
-        result = remote_chain.invoke({
-            "html_content": html_content,
-            "json_response": json_response
-            })
-        result = remote_chain.invoke({"html_content": html_content})
         try:
+            print("Invoking Langchain")
+            result = remote_chain.invoke({
+                "html_content": str(html_content),
+                "json_response": json_response
+                })
             json_result = json.loads(result)
+            print(json_result)
             # I can't predict the opportunity structure
+            #if the response from the server is  not okay, send again?
             return json_result
-        except ValueError:
-            print("error")
+        except Exception as e:
+            print(e)
+            pass
