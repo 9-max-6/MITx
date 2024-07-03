@@ -1,0 +1,38 @@
+.home-content
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 700px;
+}
+
+.home-content-text span {
+    color: #6c63ff;
+    font-weight: 900;
+}
+
+.home-content-text {
+    font-weight: 900;
+}
+
+.background-remote {
+    background-image: url("../../../public/absolute-remote.svg");
+    background-size: cover;
+    background-repeat: no-repeat;  
+    left: 72px;
+    bottom: 100px;
+}
+
+.background-vision {
+    background-image: url("../../../public/background-vision.svg");
+    background-size: contain;
+    background-repeat: no-repeat;  
+    right: 172px;
+}
+
+.blur {
+    box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
+-webkit-box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
+-moz-box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
+}

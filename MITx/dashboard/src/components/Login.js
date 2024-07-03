@@ -1,18 +1,25 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./Auth/AuthContext";
-import { useNavigate } from "react-router-dom";
-import { Box } from "@mui/material";
+import { useNavigate, Link } from "react-router-dom";
+import { Box, CardContent, Typography, Button } from "@mui/material";
+import { Card } from "@mui/material";
 import axios from "axios";
+import "./login.css";
 
 function Login() {
-  const { setisAuthenticated, setUsername } = useContext(AuthContext);
+  const { setisAuthenticated, setUsername, setUserid } =
+    useContext(AuthContext);
   const navigate = useNavigate();
 
   const [username, localsetusername] = useState();
   const [password, setpassword] = useState("");
 
+  function getLandingPage() {
+    console.log("redirecting to landing page");
+  }
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log("Hi");
     const postData = {
       email: username,
       password: password,
@@ -25,9 +32,11 @@ function Login() {
         setisAuthenticated(true);
         console.log(response);
         setUsername(response.data.name);
+        setUserid(response.data.id);
         console.log(response);
         localStorage.setItem("authStatus", true);
         localStorage.setItem("userName", response.data.name);
+        localStorage.setItem("userId", response.data.id);
         navigate("/");
       })
       .catch((error) => {
@@ -36,54 +45,160 @@ function Login() {
   };
 
   return (
-    <Box
-      sx={{
-        width: "300px",
-      }}
-    >
-      <form method="POST">
-        <Box
+    <Box className="login-page">
+      <Card
+        sx={{
+          alignSelf: "center",
+          height: "480px",
+          width: "560px",
+          gap: "36px",
+          backgroundColor: "inherit",
+        }}
+        elevation={2}
+      >
+        <CardContent
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
+            padding: "36px",
           }}
         >
-          <p>Email</p>
-          <input
-            type="email"
-            id="useremail"
-            name="useremail"
-            onChange={(e) => {
-              localsetusername(e.target.value);
+          <form className="form" method="POST">
+            <Box mb="24px">
+              <Typography
+                sx={{
+                  color: "#6c63ff",
+                  fontWeight: "700",
+                }}
+                variant="h5"
+              >
+                Login to access your profile
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography variant="h6">Email</Typography>
+              <input
+                type="email"
+                id="useremail"
+                name="useremail"
+                placeholder="  Your email"
+                onChange={(e) => {
+                  localsetusername(e.target.value);
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                mt: "24px",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography>Password</Typography>
+
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="  Your password"
+                onChange={(e) => {
+                  setpassword(e.target.value);
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                my: "20px",
+                alignSelf: "flex-end",
+              }}
+            >
+              <Button
+                sx={{
+                  color: "white",
+                  boxSizing: "border-box",
+                  backgroundColor: "#6c63ff",
+                  paddingX: "24px",
+                  "&:hover": {
+                    backgroundColor: "#1f1650",
+                    transition: "0.3s ease-in-out",
+                  },
+                }}
+                onClick={handleLogin}
+              >
+                Login
+              </Button>
+            </Box>
+            <Box>
+              {" "}
+              <Typography
+                sx={{
+                  color: "#1f1650",
+                }}
+                variant="h6"
+              >
+                Forgot your password?
+              </Typography>
+              <Typography
+                sx={{
+                  color: "#1f1650",
+                }}
+                variant="h6"
+              >
+                Click{" "}
+                <Link
+                  sx={{
+                    color: "red",
+                  }}
+                  to="reset-password"
+                >
+                  <span className="link-reset">here</span>
+                </Link>{" "}
+                to reset
+              </Typography>
+            </Box>
+          </form>
+          <Box
+            position="absolute"
+            sx={{
+              top: "48px",
+              right: "36px",
             }}
-          />
-        </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-          }}
-        >
-          <p>Password</p>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            onChange={(e) => {
-              setpassword(e.target.value);
+          >
+            <Button
+              sx={{
+                backgroundColor: "#6c63ff",
+                color: "white",
+                padding: "12px",
+                "&:hover": {
+                  backgroundColor: "#1f1650",
+                  color: "white",
+                  transition: "0.3s ease-in-out",
+                },
+              }}
+            >
+              Contact us
+            </Button>
+          </Box>
+          <Box
+            onClick={getLandingPage}
+            position="absolute"
+            sx={{
+              top: "48px",
+              left: "36px",
             }}
-          />
-        </Box>
-        <Box
-          sx={{
-            my: "20px",
-          }}
-        >
-          <button onClick={handleLogin}>Submit</button>
-        </Box>
-      </form>
+            className="logo"
+          ></Box>
+        </CardContent>
+      </Card>
+      <Box
+        className="login-image"
+        sx={{
+          position: "absolute",
+        }}
+      ></Box>
     </Box>
   );
 }

@@ -9,7 +9,6 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Topbar() {
-  // logout function
   const { isAuthenticated, setisAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
   console.log(isAuthenticated);

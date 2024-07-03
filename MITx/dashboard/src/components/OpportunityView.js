@@ -11,7 +11,9 @@ const OpportunityView = ({ opportunities }) => {
     <div>
       {opportunities.map((opp, index) => (
         <MinimalOpportunityView
-          key={opp.id}
+          key={index}
+          users={opp.users}
+          pk={opp.id}
           title={opp.title}
           deadline={opp.deadline}
           page={opp.page}

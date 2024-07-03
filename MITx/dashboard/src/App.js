@@ -16,6 +16,7 @@ import { AuthContext } from "./components/Auth/AuthContext";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import Login from "./components/Login";
 import { useNavigate } from "react-router-dom";
+import ResetPassword from "./components/ResetPassword";
 
 function App() {
   const [loaded, setloaded] = useState(true);
@@ -49,6 +50,7 @@ function App() {
         >
           <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/login/reset-password" element={<ResetPassword />} />
             <Route
               path="/"
               element={

@@ -1,0 +1,63 @@
+.card {
+    background-color: #1f1650;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-sizing: border-box;
+
+}
+.card-last {
+    color: #1f1650;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+
+}
+.card-list {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    
+}
+
+.title-ai
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-ai-insights
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.bg-ai-insights {
+    background-image: url('../../../public/absorbed.svg');
+    background-size: contain;
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    bottom: 72px;
+    right: 72px;
+    background-repeat: no-repeat;
+}
+
+.card-list li {
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+    gap: 12px;
+}
+.span {
+    text-transform: capitalize;
+    color: #6c63ff;
+    font-weight: 800;
+}

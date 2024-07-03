@@ -11,5 +11,4 @@ urlpatterns = [
     path('opps/<str:pk>', OpportunityView.as_view()),
     path('opps/hot/', HotOpportunitView.as_view()),
     path('bids/', BidView.as_view()),
-    path('bids/<str:pk>', BidView.as_view()),
 ]

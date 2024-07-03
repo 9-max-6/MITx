@@ -1,0 +1,19 @@
+.hello {
+    background-image: url("../../../public/hello.svg");
+    background-size: contain;
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    bottom: 72px;
+    right: 72px;
+    background-repeat: no-repeat;
+}
+
+.contact-form {
+}
+
+.coming-soon {
+    background-image: url('../../../public/comingsoon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

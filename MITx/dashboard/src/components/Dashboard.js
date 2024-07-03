@@ -1,38 +1,24 @@
 import { Box, Typography } from "@mui/material";
 import "./dashboard.css";
 import { AuthContext } from "./Auth/AuthContext";
+import { TrackContext } from "./TrackContext/TrackContext";
 import { Link } from "react-router-dom";
 import React, { useContext, useEffect, useState } from "react";
 import CheckCircleOutlineOutlinedIcon from "@mui/icons-material/CheckCircleOutlineOutlined";
 import StickyNote2OutlinedIcon from "@mui/icons-material/StickyNote2Outlined";
 import axios from "axios";
 import { newtonsCradle } from "ldrs";
-import DashboardBids from "./DashboardBids";
 import OpportunityView from "./OpportunityView";
+import BidView from "./BidView";
 
 function Dashboard() {
   const { isAuthenticated } = useContext(AuthContext);
   const [userloaded, setuserloaded] = useState(false);
-  const [bidsloaded, setbidsloaded] = useState(false);
-  const [bids, setbids] = useState(null);
   const [opps, setopps] = useState(null);
   const [opportunitiesloaded, setopportunitiesloaded] = useState(false);
   const { username } = useContext(AuthContext);
   newtonsCradle.register();
 
-  const getBids = async (e) => {
-    await axios
-      .get("http://127.0.0.1:8000/api/bids/", {
-        withCredentials: true,
-      })
-      .then((response) => {
-        setbids(response.data);
-        setbidsloaded(true);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
   const getHot = async (e) => {
     await axios
       .get("http://127.0.0.1:8000/api/opps/hot/", {
@@ -48,14 +34,15 @@ function Dashboard() {
   };
   useEffect(() => {
     setTimeout(() => {
-      getBids();
       getHot();
-    }, 3000);
+    }, 1000);
   }, []);
 
   useEffect(() => {
     setuserloaded(true);
   }, [username, opps]);
+
+  const { tracking, setTracking } = useContext(TrackContext);
 
   return (
     <>
@@ -122,7 +109,7 @@ function Dashboard() {
             gridColumn="span 5"
             gridRow="span 3"
           >
-            {bidsloaded ? (
+            {/* {bidsloaded ? (
               <Box className="grid-loaded" height="100%" width="100%">
                 <DashboardBids bids={bids} />
               </Box>
@@ -134,7 +121,8 @@ function Dashboard() {
                   color="#4f94e2"
                 ></l-newtons-cradle>
               </Box>
-            )}
+            )} */}
+            <BidView />
           </Box>
         </Box>
       ) : (

@@ -1,9 +1,39 @@
-import React from 'react'
-
+import React from "react";
+import { Box, Typography, Button } from "@mui/material";
+import "./resetpassword.css";
+import { Link } from "react-router-dom";
 function Archive() {
   return (
-    <div>Archive</div>
-  )
+    <Box
+      sx={{
+        height: "100vh",
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Box
+        className="coming-soon"
+        sx={{
+          height: "300px",
+          width: "300px",
+        }}
+      ></Box>
+      <Box>
+        <Typography
+          sx={{
+            color: "#6c63ff",
+            fontWeight: "700",
+          }}
+          variant="h3"
+        >
+          Site under construction!
+        </Typography>
+      </Box>
+    </Box>
+  );
 }
 
-export default Archive
+export default Archive;

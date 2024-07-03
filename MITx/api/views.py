@@ -1,7 +1,6 @@
 # The decorators are for use with functions but the super classes are for use with classes.
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from django.contrib.auth.models import AnonymousUser
 from django.contrib.auth.models import User
 from rest_framework.views import APIView
 from rest_framework import status
@@ -75,7 +74,8 @@ class LoginView(APIView):
         response =  Response()
         response.set_cookie(key='jwt', value=token, httponly=True, samesite='None')
         response.data = {
-            'name': user.name
+            'name': user.name,
+            'id': user.id
         }
 
         return response
@@ -133,23 +133,9 @@ class HotOpportunitView(APIView, JWTAuthentication):
         """A function that returns the hot opportunities"""
         self.payload = request
         opportunities = Opportunity.objects.all()[:20]
-        data_list = []
-        for opportunity in opportunities:
-            data = {} 
-            data[f"_{opportunity.id}"] = opportunity.id
-            data["title"] = opportunity.title
-            data["country"] = opportunity.country
-            data["deadline"] = opportunity.deadline
-            data["website_link"] = opportunity.website_link
-            data["date_created"] = opportunity.date_created
-            data["website_name"] = opportunity.website_name
-            data["size"] = opportunity.size
-            data["rel_score"] = opportunity.rel_score
-            data["ref_number"] = opportunity.ref_number
-            data["page"] = opportunity.page
-            data_list.append(data)
+        serializer = OpportunitySerializer(opportunities, many=True)
 
-        return Response(data_list, status=status.HTTP_200_OK)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 class BidView(APIView, JWTAuthentication):
@@ -162,31 +148,16 @@ class BidView(APIView, JWTAuthentication):
             return Response(status=status.HTTP_403_FORBIDDEN)
     
         else:
-            data_list = []
             opportunities = self.user.opportunities.all()
-            if opportunities:
-                for opportunity in opportunities:
-                    data = {}
-                    data["id"] = opportunity.id
-                    data["title"] = opportunity.title
-                    data["country"] = opportunity.country
-                    data["deadline"] = opportunity.deadline
-                    data["website_link"] = opportunity.website_link
-                    data["date_created"] = opportunity.date_created
-                    data["website_name"] = opportunity.website_name
-                    data["size"] = opportunity.size
-                    data["rel_score"] = opportunity.rel_score
-                    data["ref_number"] = opportunity.ref_number
-                    data["page"] = opportunity.page
-                    data_list.append(data)
-            return Response(data_list, status=status.HTTP_200_OK)
+            serializer = OpportunitySerializer(opportunities, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
     
-    def put(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         """A function to add an opportunity to a specific user"""
         self.payload = request
         if not self.user:
             return Response(status=status.HTTP_403_FORBIDDEN)
-        opportunity_id = kwargs.get('pk')
+        opportunity_id = request.data.get('pk')
         try:
             opportunity = Opportunity.objects.get(pk=opportunity_id)
             self.user.opportunities.add(opportunity)
@@ -197,7 +168,7 @@ class BidView(APIView, JWTAuthentication):
     def delete(self, request, *args, **kwargs):
         """A function to add an opportunity to a specific user"""
         self.payload = request
-        opportunity_id = kwargs.get('pk')
+        opportunity_id = request.data.get('pk')
         try:
             opportunity = Opportunity.objects.get(pk=opportunity_id)
             self.user.opportunities.remove(opportunity)

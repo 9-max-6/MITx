@@ -1,0 +1,14 @@
+ .app-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 36px;
+    box-sizing: border-box;
+ }
+ 
+
+
+ .main {
+    padding-left: 36px;
+    padding-right: 36px;
+ }
