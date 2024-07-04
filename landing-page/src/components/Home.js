@@ -5,6 +5,11 @@ import "./styles/home.css";
 import Background from "./Background";
 
 function Home() {
+
+	function toLoginPage () {
+		console.log('Redirecting to the login page');
+	window.location.href = 'https://mitx.mutukumaxwell.tech/dashboard/';
+	}
   return (
     <Box className="home-content">
       <Box marginBottom="36px">
@@ -51,6 +56,7 @@ function Home() {
               transition: "0.3s ease-in-out",
             },
           }}
+	  onClick={toLoginPage}
         >
           Login
         </Button>

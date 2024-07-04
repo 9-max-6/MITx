@@ -16,7 +16,7 @@ function Topbar() {
     e.preventDefault();
     axios
       .post(
-        "http://127.0.0.1:8000/api/logout/",
+        "https://mitx.mutukumaxwell.tech/api/logout/",
         {},
         {
           withCredentials: true,

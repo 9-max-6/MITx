@@ -416,10 +416,10 @@ class Command(BaseCommand):
     }
     def handle(self, *args, **kwargs):
         """A function to scrape"""
-        # opportunities_gtai = self.gtai.recursive_scraper(self.gtai.baseurl)
+        opportunities_gtai = self.gtai.recursive_scraper(self.gtai.baseurl)
         opportunities_rfx = self.rfx.rfx_scraper(self.rfx.baseurl)
         if opportunities_rfx:
-            payload = opportunities_rfx
+            payload = opportunities_rfx + opportunities_gtai
             return self.query_batch(payload)
         else:
             return

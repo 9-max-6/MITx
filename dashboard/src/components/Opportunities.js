@@ -15,7 +15,7 @@ function Opportunities() {
   }, []);
   const getData = async () => {
     try {
-      const response = await axios.get("http://127.0.0.1:8000/api/opps/", {
+      const response = await axios.get("https://mitx.mutukumaxwell.tech/api/opps/", {
         withCredentials: true,
       });
       setopps(response.data);

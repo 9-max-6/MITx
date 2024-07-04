@@ -12,7 +12,7 @@ function Bids() {
 
   const getBids = async (e) => {
     await axios
-      .get("http://127.0.0.1:8000/api/bids/", {
+      .get("https://mitx.mutukumaxwell.tech/api/bids/", {
         withCredentials: true,
       })
       .then((response) => {

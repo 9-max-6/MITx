@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('dashboard/', TemplateView.as_view(template_name="dashboard/index.html")),
+    re_path(r'^dashboard', TemplateView.as_view(template_name="dashboard/index.html")), 
     path('', TemplateView.as_view(template_name="index.html")),
-    re_path(r'^dashboard/', TemplateView.as_view(template_name="dashboard/index.html")),
     re_path(r'^.*$', TemplateView.as_view(template_name="index.html")),
     ]

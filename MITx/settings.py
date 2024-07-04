@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = ["48.217.169.242", "mitx.mutukumaxwell.tech"]
 
 CORS_ALLOWED_ORIGINS = [
+        "http://mitx.mutukumaxwell.tech",
     "http://localhost:3000",  # Add your frontend URL here
     "https://your-production-domain.com",  # Add your production frontend URL here
 ]

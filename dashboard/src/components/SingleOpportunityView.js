@@ -11,7 +11,7 @@ function isTracked(users, userid) {
 
 function trackOpp(pk, onSuccess) {
   axios
-    .post("http://127.0.0.1:8000/api/bids/", { pk }, { withCredentials: true })
+    .post("https://mitx.mutukumaxwell.tech/api/bids/", { pk }, { withCredentials: true })
     .then((response) => {
       console.log(response);
       onSuccess();
@@ -21,7 +21,7 @@ function trackOpp(pk, onSuccess) {
 
 function untrackOpp(pk, onSuccess) {
   axios
-    .delete("http://127.0.0.1:8000/api/bids/", {
+    .delete("https://mitx.mutukumaxwell.tech/api/bids/", {
       data: { pk },
       withCredentials: true,
     })

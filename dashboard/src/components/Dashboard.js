@@ -21,7 +21,7 @@ function Dashboard() {
 
   const getHot = async (e) => {
     await axios
-      .get("http://127.0.0.1:8000/api/opps/hot/", {
+      .get("https://mitx.mutukumaxwell.tech/api/opps/hot/", {
         withCredentials: true,
       })
       .then((response) => {
@@ -35,7 +35,7 @@ function Dashboard() {
   useEffect(() => {
     setTimeout(() => {
       getHot();
-    }, 1000);
+    });
   }, []);
 
   useEffect(() => {

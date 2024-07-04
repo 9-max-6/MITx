@@ -48,7 +48,7 @@ function App() {
             margin: isAuthenticated ? "128px auto 0 auto" : "0px",
           }}
         >
-          <Routes>
+          <Routes basename="/dashboard">
             <Route path="/login" element={<Login />} />
             <Route path="/login/reset-password" element={<ResetPassword />} />
             <Route
@@ -108,3 +108,4 @@ function App() {
 }
 
 export default App;
+

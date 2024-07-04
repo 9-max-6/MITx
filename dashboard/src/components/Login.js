@@ -15,7 +15,8 @@ function Login() {
   const [password, setpassword] = useState("");
 
   function getLandingPage() {
-    console.log("redirecting to landing page");
+	  console.log('Redirecting to landing page');
+	  window.location.href = 'https://mitx.mutukumaxwell.tech';
   }
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,7 +26,7 @@ function Login() {
       password: password,
     };
     axios
-      .post("http://127.0.0.1:8000/api/login/", postData, {
+      .post("https://mitx.mutukumaxwell.tech/api/login/", postData, {
         withCredentials: true,
       })
       .then((response) => {
