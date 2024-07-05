@@ -1,6 +1,6 @@
-from django.urls import path
+from django.urls import path, re_path
 from .views import LogoutView, LoginView, UserView, RegisterView
-from .views import HotOpportunitView, OpportunityView,  BidView
+from .views import HotOpportunitView, OpportunityView,  BidView, FilteredOpportunityView
 
 urlpatterns = [
     path('logout/', LogoutView.as_view()),
@@ -9,6 +9,8 @@ urlpatterns = [
     path('user/', UserView.as_view()),
     path('opps/', OpportunityView.as_view()),
     path('opps/<str:pk>', OpportunityView.as_view()),
+    path('opps/region/<str:delim>', FilteredOpportunityView.as_view()),
+    re_path(r'^opps/region/.*$', FilteredOpportunityView.as_view()),
     path('opps/hot/', HotOpportunitView.as_view()),
     path('bids/', BidView.as_view()),
 ]

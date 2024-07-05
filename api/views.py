@@ -122,17 +122,54 @@ class OpportunityView(APIView, JWTAuthentication):
 
     def get_all_opp(self, request, *args, **kwargs):
         """Function to get all args."""
-        opportunities = Opportunity.objects.all()
+        opportunities = Opportunity.objects.all().order_by('date_created')
         serializer = OpportunitySerializer(opportunities, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+class FilteredOpportunityView(APIView, JWTAuthentication):
+    """class to handle filters"""
+    regions = {
+    "northern_africa": ['algeria', 'egypt', 'libya', 'morocco', 'sudan', 'tunisia'],
+    "western_africa": ['benin', 'burkina_faso', 'cape_verde', 'cote_d_ivoire', 'gambia', 'ghana', 'guinea', 'guinea-bissau', 'liberia', 'mali', 'mauritania', 'niger', 'nigeria', 'senegal', 'sierra_leone', 'togo'],
+    "central_africa": ['angola', 'cameroon', 'central_african_republic', 'chad', 'democratic_republic_of_the_congo', 'republic_of_the_congo', 'equatorial_guinea', 'gabon', 'sao_tome_and_principe'],
+    "eastern_africa": ['burundi', 'comoros', 'djibouti', 'eritrea', 'ethiopia', 'kenya', 'madagascar', 'malawi', 'mauritius', 'mozambique', 'rwanda', 'seychelles', 'somalia', 'south_sudan', 'tanzania', 'uganda', 'zambia', 'zimbabwe'],
+    "southern_africa": ['botswana', 'eswatini', 'lesotho', 'namibia', 'south_africa'],
+    "eastern_europe": ['belarus', 'moldova', 'russia', 'ukraine'],
+    "central_europe": ['czech_republic', 'hungary', 'poland', 'slovakia'],
+    "southeastern_europe": ['albania', 'bosnia_and_herzegovina', 'bulgaria', 'croatia', 'greece', 'kosovo', 'montenegro', 'north_macedonia', 'romania', 'serbia', 'slovenia'],
+    "caucasus": ['armenia', 'azerbaijan', 'georgia']
+}
+
+    def get(self, request, *args, **kwargs):
+        """for the get request"""
+        self.payload = request
+        delim = kwargs.get('delim')
+        opportunities = Opportunity.objects.all().order_by('date_created')
+        region_set = self.regions.get(delim, None)
+        if region_set:
+            data_list = self.get_datalist(opportunities, region_set)
+            serializer = OpportunitySerializer(data_list, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+    def get_datalist(self, opportunities, region_set):
+        """a function to collect opportunities by region"""
+        data_list = []
+        for opportunity in opportunities:
+            if opportunity.country:
+                if opportunity.country.lower() in region_set:
+                    data_list.append(opportunity)
+        return data_list
+
 
 class HotOpportunitView(APIView, JWTAuthentication):
     """a class for recommendations"""
     def get(self, request, *args, **kwargs):
         """A function that returns the hot opportunities"""
         self.payload = request
-        opportunities = Opportunity.objects.all()[:20]
+        opportunities = Opportunity.objects.all().order_by('date_created')[:20]
         serializer = OpportunitySerializer(opportunities, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
