@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
-import "./resetpassword.css";
+import "./styles/resetpassword.css";
 import { Link } from "react-router-dom";
 function Archive() {
   return (
@@ -15,7 +15,7 @@ function Archive() {
       }}
     >
       <Box
-        className="coming-soon"
+        className="coming-soon image"
         sx={{
           height: "300px",
           width: "300px",

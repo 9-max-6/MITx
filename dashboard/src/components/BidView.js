@@ -1,5 +1,5 @@
 import { React, useState, useEffect, useContext } from "react";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import axios from "axios";
 import DashboardBids from "./DashboardBids";
 import { TrackContext } from "./TrackContext/TrackContext";
@@ -31,15 +31,21 @@ function BidView() {
   return (
     <>
       {bidsloaded ? (
-        <Box className="grid-loaded" height="100%" width="100%">
+        <Box className="grid-loaded container" position="relative">
           <DashboardBids bids={bids} />
         </Box>
       ) : (
-        <Box className="quantum-loader">
+        <Box
+          className="quantum-loader, flex"
+          height="100vh"
+          sx={{
+            alignItems: "center",
+          }}
+        >
           <l-newtons-cradle
-            size="45"
+            size="100"
             speed="1.75"
-            color="#4f94e2"
+            color="#6c63ff"
           ></l-newtons-cradle>
         </Box>
       )}

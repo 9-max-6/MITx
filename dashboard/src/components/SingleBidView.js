@@ -1,63 +1,135 @@
 import React from "react";
-import { Box, Typography, Card, CardContent } from "@mui/material";
-const SingleBidView = ({ title, deadline, page, country, link }) => {
-  return (
-    <Card
-      sx={{
-        border: "1px solid #2a487e",
-        backgroundColor: "inherit",
-        mb: "12px",
-      }}
-    >
-      <CardContent>
-        <Typography variant="h5">{title}</Typography>
-        <Typography variant="body1">Deadline: {deadline}</Typography>
-        <Typography variant="body2">Country: {country}</Typography>
-        <Typography variant="body2">Summary</Typography>
-        <Typography variant="body2">{page.summary}</Typography>
-        <Typography
-          component="a"
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          More Info
-        </Typography>
-      </CardContent>
-    </Card>
-  );
-};
+import { Typography, Card, CardContent, Box, Button } from "@mui/material";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import { useState } from "react";
 
 const SingleBidViewDetailed = ({ title, deadline, page, country, link }) => {
+  const [expired, setexpired] = useState(false);
+
+  const deadlineCalculator = () => {
+    const the_deadline = new Date(deadline);
+    const now = new Date();
+    const daysRemanining = deadline - now;
+    if (daysRemanining < 1) {
+      setexpired(true);
+    }
+    return daysRemanining;
+  };
   return (
-    <Card
+    <Box
       sx={{
-        border: "1px solid #2a487e",
+        border: "1px solid #ccc",
+        borderRadius: "8px",
         backgroundColor: "inherit",
-        mb: "12px",
-        width: "70%",
-        marginY: "12px",
-        marginX: "auto",
+        position: "relative",
+        boxSizing: "border-box",
+        padding: "12px",
+        marginBottom: "12px",
       }}
     >
-      <CardContent>
-        <Typography variant="h5">{title}</Typography>
-        <Typography variant="body1">Deadline: {deadline}</Typography>
-        <Typography variant="body2">Country: {country}</Typography>
-        <Typography variant="body2">Summary</Typography>
-        <Typography variant="body2">{page.summary}</Typography>
-        <Typography variant="body2">{page.main}</Typography>
+      <Box
+        sx={{
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "#1f1650",
+            textTransform: "uppercase",
+          }}
+          variant="h6"
+        >
+          {title}
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          marginY: "12px",
+        }}
+      >
+        <blockquote>
+          <Typography
+            sx={{
+              color: "#6c63ff",
+              fontWeight: "600",
+            }}
+            variant="h6"
+          >
+            Summary
+          </Typography>
+
+          <Typography sx={{}} variant="body1">
+            {page.main}
+          </Typography>
+        </blockquote>
+      </Box>
+
+      <Box sx={{}}>
+        <blockquote>
+          <Typography variant="body1">
+            {" "}
+            Country: {country ? country : "unknown"}{" "}
+          </Typography>
+          <Typography
+            component="a"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            For more information, click here.
+          </Typography>
+        </blockquote>
+      </Box>
+      <Box
+        position="relative"
+        height="36px"
+        boxSizing="content-box"
+        sx={{
+          m: "12px",
+        }}
+      >
+        <Typography
+          sx={{
+            color: `${expired ? "red" : "green"}`,
+            ml: "36px",
+            fontWeight: "700",
+          }}
+          variant="body1"
+        >
+          Deadline: {deadline}
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          height: "16px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "flex-end",
+          marginY: "12px",
+          "&:hover": {
+            cursor: "pointer",
+          },
+        }}
+      >
         <Typography
           component="a"
           href={link}
           target="_blank"
           rel="noopener noreferrer"
         >
-          More Info
+          <KeyboardArrowRightIcon
+            sx={{
+              alignSelf: "flex-end",
+              color: "#6c63ff",
+              height: "36px",
+              width: "36px",
+            }}
+          />
         </Typography>
-      </CardContent>
-    </Card>
+      </Box>
+    </Box>
   );
 };
 
-export { SingleBidView, SingleBidViewDetailed };
+export { SingleBidViewDetailed };

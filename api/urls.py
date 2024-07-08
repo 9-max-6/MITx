@@ -1,5 +1,5 @@
 from django.urls import path, re_path
-from .views import LogoutView, LoginView, UserView, RegisterView
+from .views import LogoutView, LoginView, UserView, RegisterView, StatsView
 from .views import HotOpportunitView, OpportunityView,  BidView, FilteredOpportunityView
 
 urlpatterns = [
@@ -13,4 +13,5 @@ urlpatterns = [
     re_path(r'^opps/region/.*$', FilteredOpportunityView.as_view()),
     path('opps/hot/', HotOpportunitView.as_view()),
     path('bids/', BidView.as_view()),
+    path('stats/<str:view>', StatsView.as_view()),
 ]

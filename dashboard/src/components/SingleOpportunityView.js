@@ -2,8 +2,8 @@ import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { AuthContext } from "./Auth/AuthContext";
 import { Typography, Box, Button } from "@mui/material";
-import InputOutlinedIcon from "@mui/icons-material/InputOutlined";
 import { TrackContext } from "./TrackContext/TrackContext";
+import { useTheme } from "@mui/material";
 
 function isTracked(users, userid) {
   return users.includes(Number(userid));
@@ -11,7 +11,11 @@ function isTracked(users, userid) {
 
 function trackOpp(pk, onSuccess) {
   axios
-    .post("https://mitx.mutukumaxwell.tech/api/bids/", { pk }, { withCredentials: true })
+    .post(
+      "https://mitx.mutukumaxwell.tech/api/bids/",
+      { pk },
+      { withCredentials: true }
+    )
     .then((response) => {
       console.log(response);
       onSuccess();
@@ -45,27 +49,110 @@ const MinimalOpportunityView = ({
   const { userid } = useContext(AuthContext);
   const { tracking, setTracking } = useContext(TrackContext);
   const [tracked, setTracked] = useState(isTracked(users, userid));
+  const [expired, setexpired] = useState(false);
+
+  const theme = useTheme();
+
+  const deadlineCalculator = () => {
+    const the_deadline = new Date(deadline);
+    const now = new Date();
+    const daysRemanining = deadline - now;
+    if (daysRemanining < 1) {
+      setexpired(true);
+    }
+    return daysRemanining;
+  };
 
   return (
     <Box
       className="opportunity-box"
-      sx={{ margin: "20px", border: "1px solid #ccc", p: "20px" }}
+      sx={{
+        border: "1px solid #ccc",
+        borderRadius: "8px",
+        marginBottom: "24px",
+        marginRight: "24px",
+        marginLeft: "24px",
+        position: "relative",
+        transition: "0.3s ease-in-out",
+        "&:hover": {
+          backgroundColor: "#dde2ff",
+        },
+      }}
     >
-      <Typography variant="h5">{title}</Typography>
-      <Typography variant="body1">Deadline: {deadline}</Typography>
-      <Typography variant="body2">Country: {country}</Typography>
-      <Typography variant="body2">Website: {website_name}</Typography>
-      <Typography variant="body2">Summary</Typography>
-      <Typography variant="body2">{page.summary}</Typography>
-      <Typography
-        component="a"
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Box
+        sx={{
+          p: "12px",
+          textAlign: "center",
+        }}
       >
-        More Info
-      </Typography>
-      <Box position="relative" height="36px" boxSizing="content-box">
+        <Typography
+          sx={{
+            color: "#1f1650",
+            textTransform: "uppercase",
+          }}
+          variant="h6"
+        >
+          {title}
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          marginY: "12px",
+        }}
+      >
+        <blockquote>
+          <Typography
+            sx={{
+              color: "#6c63ff",
+              fontWeight: "600",
+            }}
+            variant="h6"
+          >
+            Summary
+          </Typography>
+
+          <Typography sx={{}} variant="body1">
+            {page.main}
+          </Typography>
+        </blockquote>
+      </Box>
+
+      <Box sx={{}}>
+        <blockquote>
+          <Typography variant="body1">
+            {" "}
+            Country: {country ? country : "unknown"}{" "}
+          </Typography>
+          <Typography variant="body1">Website: {website_name}</Typography>
+          <Typography
+            component="a"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            For more information, click here.
+          </Typography>
+        </blockquote>
+      </Box>
+      <Box
+        position="relative"
+        height="36px"
+        boxSizing="content-box"
+        sx={{
+          m: "12px",
+        }}
+      >
+        <Typography
+          sx={{
+            color: `${expired ? "red" : "green"}`,
+            ml: "36px",
+            fontWeight: "700",
+          }}
+          variant="body1"
+        >
+          Deadline: {deadline}
+        </Typography>
+
         <Box
           sx={{
             position: "absolute",
@@ -85,9 +172,9 @@ const MinimalOpportunityView = ({
                 })
               }
               sx={{
-                backgroundColor: "#1d2c4c",
+                backgroundColor: "#6c63ff",
                 color: "white",
-                "&:hover": { backgroundColor: "#4f94e2", color: "black" },
+                "&:hover": { backgroundColor: "#1f1650", color: "white" },
               }}
             >
               Untrack
@@ -101,9 +188,13 @@ const MinimalOpportunityView = ({
                 })
               }
               sx={{
-                backgroundColor: "#1d2c4c",
+                backgroundColor: "#1f1650",
                 color: "white",
-                "&:hover": { backgroundColor: "#4f94e2", color: "black" },
+                "&:hover": {
+                  backgroundColor: "#6c63ff",
+                  color: "white",
+                  transition: "0.3s ease-in-out",
+                },
               }}
             >
               Track
@@ -114,4 +205,177 @@ const MinimalOpportunityView = ({
     </Box>
   );
 };
-export { MinimalOpportunityView };
+
+const DetailedOpportunityView = ({
+  title,
+  deadline,
+  page,
+  country,
+  link,
+  website_name,
+  pk,
+  users,
+}) => {
+  const { userid } = useContext(AuthContext);
+  const { tracking, setTracking } = useContext(TrackContext);
+  const [tracked, setTracked] = useState(isTracked(users, userid));
+  const [expired, setexpired] = useState(false);
+
+  const theme = useTheme();
+
+  const deadlineCalculator = () => {
+    const the_deadline = new Date(deadline);
+    const now = new Date();
+    const daysRemanining = deadline - now;
+    if (daysRemanining < 1) {
+      setexpired(true);
+    }
+    return daysRemanining;
+  };
+  useEffect(() => {
+    deadlineCalculator();
+  });
+  return (
+    <Box
+      className="opportunity-box"
+      sx={{
+        border: "1px solid #ccc",
+        borderRadius: "8px",
+        my: "24px",
+        position: "relative",
+        transition: "0.3s ease-in-out",
+        "&:hover": {
+          backgroundColor: "#dde2ff",
+        },
+      }}
+    >
+      <Box
+        sx={{
+          backgroundColor: "#1f1650",
+          p: "12px",
+          textAlign: "center",
+          borderTopLeftRadius: "8px",
+          borderTopRightRadius: "8px",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "white",
+            textTransform: "uppercase",
+          }}
+          variant="h6"
+        >
+          {title}
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          marginY: "12px",
+        }}
+      >
+        <blockquote>
+          <Typography
+            sx={{
+              color: "#6c63ff",
+              fontWeight: "600",
+            }}
+            variant="h6"
+          >
+            Summary
+          </Typography>
+
+          <Typography sx={{}} variant="h6">
+            {page.main}
+          </Typography>
+        </blockquote>
+      </Box>
+
+      <Box sx={{}}>
+        <blockquote>
+          <Typography variant="body1">
+            {" "}
+            Country: {country ? country : "unknown"}{" "}
+          </Typography>
+          <Typography variant="body1">Website: {website_name}</Typography>
+          <Typography
+            component="a"
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            For more information, click here.
+          </Typography>
+        </blockquote>
+      </Box>
+      <Box
+        position="relative"
+        height="36px"
+        boxSizing="content-box"
+        sx={{
+          m: "12px",
+        }}
+      >
+        <Typography
+          sx={{
+            color: `${expired ? "red" : "green"}`,
+            ml: "36px",
+            fontWeight: "700",
+          }}
+          variant="body1"
+        >
+          Deadline: {deadline}
+        </Typography>
+
+        <Box
+          sx={{
+            position: "absolute",
+            display: "flex",
+            gap: "12px",
+            top: "0px",
+            right: "0px",
+            color: "white",
+          }}
+        >
+          {tracked ? (
+            <Button
+              onClick={() =>
+                untrackOpp(pk, () => {
+                  setTracked(false);
+                  setTracking(!tracking);
+                })
+              }
+              sx={{
+                backgroundColor: "#6c63ff",
+                color: "white",
+                "&:hover": { backgroundColor: "#1f1650", color: "white" },
+              }}
+            >
+              Untrack
+            </Button>
+          ) : (
+            <Button
+              onClick={() =>
+                trackOpp(pk, () => {
+                  setTracked(true);
+                  setTracking(!tracking);
+                })
+              }
+              sx={{
+                backgroundColor: "#1f1650",
+                color: "white",
+                "&:hover": {
+                  backgroundColor: "#6c63ff",
+                  color: "white",
+                  transition: "0.3s ease-in-out",
+                },
+              }}
+            >
+              Track
+            </Button>
+          )}
+        </Box>
+      </Box>
+    </Box>
+  );
+};
+export { MinimalOpportunityView, DetailedOpportunityView };

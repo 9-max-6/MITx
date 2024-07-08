@@ -2,6 +2,7 @@ import json
 import requests
 from bs4 import BeautifulSoup
 from ...models import Opportunity
+from ...models import StatsModel
 from django.core.management.base import BaseCommand
 from api.models import Opportunity
 from langserve import RemoteRunnable
@@ -403,6 +404,8 @@ class Command(BaseCommand):
     """A class to ocherstrate scraping"""
     gtai = GTAI()
     rfx = RFXNow()
+    count = 0
+
     opportunity_structure = {
         "title": "",
         "ref_number": "",
@@ -420,7 +423,8 @@ class Command(BaseCommand):
         opportunities_rfx = self.rfx.rfx_scraper(self.rfx.baseurl)
         if opportunities_rfx:
             payload = opportunities_rfx + opportunities_gtai
-            return self.query_batch(payload)
+            self.query_batch(payload)
+            return self.update_db_stats()
         else:
             return
     
@@ -433,6 +437,7 @@ class Command(BaseCommand):
             new_opportunity = Opportunity(**opportunity)
             new_opportunity.save()
             print("Saving opportunity")
+            self.count += 1
         except:
             pass
 
@@ -484,3 +489,37 @@ class Command(BaseCommand):
         except Exception as e:
             print(e)
             pass
+    
+    def update_db_stats(self):
+        """A command to update stats in the backend"""
+        
+        regions = {
+    "northern_africa": ['algeria', 'egypt', 'libya', 'morocco', 'sudan', 'tunisia'],
+    "western_africa": ['benin', 'burkina_faso', 'cape_verde', 'cote_d_ivoire', 'gambia', 'ghana', 'guinea', 'guinea-bissau', 'liberia', 'mali', 'mauritania', 'niger', 'nigeria', 'senegal', 'sierra_leone', 'togo'],
+    "central_africa": ['angola', 'cameroon', 'central_african_republic', 'chad', 'democratic_republic_of_the_congo', 'republic_of_the_congo', 'equatorial_guinea', 'gabon', 'sao_tome_and_principe'],
+    "eastern_africa": ['burundi', 'comoros', 'djibouti', 'eritrea', 'ethiopia', 'kenya', 'madagascar', 'malawi', 'mauritius', 'mozambique', 'rwanda', 'seychelles', 'somalia', 'south_sudan', 'tanzania', 'uganda', 'zambia', 'zimbabwe'],
+    "southern_africa": ['botswana', 'eswatini', 'lesotho', 'namibia', 'south_africa'],
+    "eastern_europe": ['belarus', 'moldova', 'russia', 'ukraine'],
+    "central_europe": ['czech_republic', 'hungary', 'poland', 'slovakia'],
+    "southeastern_europe": ['albania', 'bosnia_and_herzegovina', 'bulgaria', 'croatia', 'greece', 'kosovo', 'montenegro', 'north_macedonia', 'romania', 'serbia', 'slovenia'],
+    "caucasus": ['armenia', 'azerbaijan', 'georgia'],
+    "other": []
+    }
+        opportunities = Opportunity.objects.all()
+        regions_list = list(regions.keys())
+        data = {"region_distribution": {region: 0 for region in regions_list}}
+        data["overall_count"] = len(opportunities)
+        data["new_opportunities"] = self.count
+
+        for opportunity in opportunities:
+            for region in regions_list:
+                if not opportunity.country:
+                    data[region] += 1
+                if opportunity.country.lower() in regions.get(region):
+                    data["region_distribution"][region] += 1
+        try:
+            new_stats_entry = StatsModel(**data)
+            new_stats_entry.save()
+            print(new_stats_entry)
+        except Exception as e:
+            print(e)

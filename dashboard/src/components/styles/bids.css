@@ -1,0 +1,15 @@
+.team {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../../public/team.svg');
+    height: 200px;
+    width: 200px;
+}
+
+.world {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../../public/world.svg');
+    height: 200px;
+    width: 200px;
+}

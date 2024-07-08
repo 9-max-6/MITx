@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { Box, CardContent, Typography, Button } from "@mui/material";
 import { Card } from "@mui/material";
 import axios from "axios";
-import "./login.css";
+import "./styles/login.css";
 
 function Login() {
   const { setisAuthenticated, setUsername, setUserid } =
@@ -15,8 +15,8 @@ function Login() {
   const [password, setpassword] = useState("");
 
   function getLandingPage() {
-	  console.log('Redirecting to landing page');
-	  window.location.href = 'https://mitx.mutukumaxwell.tech';
+    console.log("Redirecting to landing page");
+    window.location.href = "https://mitx.mutukumaxwell.tech";
   }
   const handleLogin = async (e) => {
     e.preventDefault();

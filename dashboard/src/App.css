@@ -1,19 +1,19 @@
 .main {
-  height: 85vh;
   width: 100%;
   box-sizing: border-box;
 }
 
 .app {
   box-sizing: border-box;
+  min-height: 100vh;
 }
 
 .mainContent {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  background-color: #f1f7fd;
+  background-color: #ecf0ff;
   box-sizing: border-box;
   border-radius: 16px;
+  min-height: 100vh;
   
 }

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import User, Opportunity
+from .models import User, Opportunity, StatsModel
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -23,3 +23,16 @@ class OpportunitySerializer(serializers.ModelSerializer):
     class Meta:
         model = Opportunity
         fields = '__all__'
+
+class StatsSerializer(serializers.ModelSerializer):
+    """Serializers for the stats class"""
+    class Meta:
+        model = StatsModel
+        fields = '__all__'
+
+
+class StatsScraperSerializer(serializers.ModelSerializer):
+    """Serializers for the stats class"""
+    class Meta:
+        model = StatsModel
+        fields = ['new_opportunities', 'date_created', 'id']

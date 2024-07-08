@@ -11,7 +11,6 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-
 class Opportunity(models.Model):
     """A class to represent the opportunity table
     """
@@ -69,3 +68,24 @@ class Opportunity(models.Model):
     def __str__(self):
         """String rep of object"""
         return f"{self.title}"
+
+class StatsModel(models.Model):
+    """A class to represent the stats table
+    """
+    id = models.UUIDField(
+        "stats entry unique ID",
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    date_created = models.DateTimeField(
+        auto_now=True
+    )
+    region_distribution = models.JSONField(null=True, blank=True)
+    overall_count = models.IntegerField(
+        "Opportunity'count"
+    )
+    new_opportunities =  models.IntegerField(
+        "New opportunity'count"
+    )
+

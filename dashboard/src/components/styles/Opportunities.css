@@ -1,0 +1,27 @@
+.grid-loaded {
+    display: "flex",
+}
+
+
+.filters-opps {
+    color: #6c63ff;
+}
+
+.text-span span {
+    color: #6c63ff;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.text-span-color span {
+    color: #F50057;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.world {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../../../public/world.svg');
+    height: 200px;
+    width: 200px;
+}

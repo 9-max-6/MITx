@@ -2,13 +2,18 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useState } from "react";
 import { SingleBidViewDetailed } from "./SingleBidView";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Card, CardContent } from "@mui/material";
 import { Link } from "react-router-dom";
+import { newtonsCradle } from "ldrs";
+import { useTheme } from "@emotion/react";
+import "./styles/bids.css";
 
 function Bids() {
   const [bidsloaded, setbidsloaded] = useState(false);
   const [bidscount, setbidscount] = useState(false);
   const [bids, setbids] = useState(null);
+  const theme = useTheme();
+  newtonsCradle.register();
 
   const getBids = async (e) => {
     await axios
@@ -31,8 +36,55 @@ function Bids() {
     return (
       <>
         {bids.length ? (
-          <div>
+          <Box
+            sx={{
+              width: "70%",
+              marginTop: "36px",
+              marginX: "auto",
+            }}
+          >
             <>
+              <Card
+                sx={{
+                  backgroundColor: "inherit",
+                }}
+                elevation={0}
+              >
+                <CardContent
+                  sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    gap: "12px",
+                  }}
+                >
+                  <Box
+                    className="logo"
+                    sx={{
+                      flexShrink: "0",
+                    }}
+                  ></Box>
+
+                  <Box
+                    sx={{
+                      textAlign: "center",
+                      mx: "72px",
+                    }}
+                  >
+                    <Typography>
+                      Find the opportunities that you have tagged for a closer
+                      look and see who else in your team is working on the same
+                      opportunities as you.
+                    </Typography>
+                    <Typography>
+                      Very soon, you will be able to expand the opportunities to
+                      see the references that have been attached and the team
+                      members that worked on projects that are similar to the
+                      ones you're viewing.
+                    </Typography>
+                  </Box>
+                  <Box className="team"></Box>
+                </CardContent>
+              </Card>
               {bids.map((opp, index) => (
                 <SingleBidViewDetailed
                   key={index}
@@ -40,23 +92,31 @@ function Bids() {
                   deadline={opp.deadline}
                   page={opp.page}
                   country={opp.country}
-                  link={opp.link}
+                  link={opp.website_link}
                   website_name={opp.website_name}
                 />
               ))}
             </>
-          </div>
+          </Box>
         ) : (
           <Box
-            height="100%"
-            width="100%"
-            display="flex"
-            justifyContent="center"
-            flexDirection="column"
-            gap="12px"
-            position="relative"
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
           >
-            <Box className="missing"></Box>
+            <Box
+              className="missing image"
+              sx={{
+                height: "400px",
+                backgroundSize: "contain",
+                width: "400px",
+                marginTop: "72px",
+              }}
+            ></Box>
             <Box className="missing-content">
               <Typography>There is nothing here</Typography>
             </Box>
@@ -71,7 +131,21 @@ function Bids() {
       </>
     );
   } else {
-    return <div>Loading</div>;
+    return (
+      <Box
+        className="quantum-loader, flex"
+        height="100vh"
+        sx={{
+          alignItems: "center",
+        }}
+      >
+        <l-newtons-cradle
+          size="100"
+          speed="1.75"
+          color="#6c63ff"
+        ></l-newtons-cradle>
+      </Box>
+    );
   }
 }
 

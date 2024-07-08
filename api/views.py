@@ -1,5 +1,4 @@
 # The decorators are for use with functions but the super classes are for use with classes.
-from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 from rest_framework.views import APIView
@@ -7,11 +6,11 @@ from rest_framework import status
 from django.shortcuts import render
 from rest_framework import status
 from rest_framework.views import APIView
-from .serializers import UserSerializer, OpportunitySerializer
+from .serializers import UserSerializer, OpportunitySerializer, StatsSerializer, StatsScraperSerializer
 from rest_framework.response import Response
 from rest_framework.exceptions import AuthenticationFailed
 import jwt, datetime
-from .models import Opportunity
+from .models import Opportunity, StatsModel
 from .models import User
 
 
@@ -212,3 +211,29 @@ class BidView(APIView, JWTAuthentication):
         except Opportunity.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
         return Response(status=status.HTTP_200_OK)
+
+class StatsView(APIView, JWTAuthentication):
+    """a class to represent database state"""
+    def get(self, request, **kwargs):
+        """the getter"""
+        self.payload = request
+        if not self.user:
+            return Response(status=status.HTTP_403_FORBIDDEN)
+        else:
+            view = kwargs.get('view')
+            if view == "dist":
+                stats = StatsModel.objects.order_by('-date_created').first()
+                serializer = StatsSerializer(stats)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            else:
+                if view == "scpx":
+                    stats = StatsModel.objects.order_by('-date_created').all()
+                    serializer = StatsScraperSerializer(stats, many=True)
+                    return Response(serializer.data, status=status.HTTP_200_OK)
+
+
+        
+
+                    
+
+        

@@ -1,16 +1,18 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import "./components.css";
+import "./styles/components.css";
 import { useContext } from "react";
 import { AuthContext } from "./Auth/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useTheme } from "@mui/material";
 
 function Topbar() {
   const { isAuthenticated, setisAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
+  const theme = useTheme();
   console.log(isAuthenticated);
   const logOut = async (e) => {
     e.preventDefault();
@@ -37,29 +39,45 @@ function Topbar() {
       {isAuthenticated ? (
         <Box className="Navbar">
           <Box className="farLeft">
-            <Box className="logo"></Box>
             {}
             <ul>
               <Link to="/">
                 <Button>
-                  <li className="Dashboard">Dashboard</li>
+                  <li className="Dashboard">
+                    <Typography sx={{}} variant="h6">
+                      Home
+                    </Typography>
+                  </li>
                 </Button>
               </Link>
-
+            </ul>
+            <ul>
               <Link to="/opps">
                 <Button>
-                  <li>Opportunities</li>
+                  <li>
+                    <Typography sx={{}} variant="h6">
+                      opportunities
+                    </Typography>
+                  </li>
                 </Button>
               </Link>
 
               <Link to="/bids">
                 <Button>
-                  <li>Bids</li>
+                  <li>
+                    <Typography sx={{}} variant="h6">
+                      bids
+                    </Typography>
+                  </li>
                 </Button>
               </Link>
               <Link to="/archive">
                 <Button>
-                  <li className="center">Archive</li>
+                  <li>
+                    <Typography sx={{}} variant="h6">
+                      archive
+                    </Typography>
+                  </li>
                 </Button>
               </Link>
             </ul>
