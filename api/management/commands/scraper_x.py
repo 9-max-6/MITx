@@ -424,7 +424,7 @@ class Command(BaseCommand):
             return self.update_db_stats()
         else:
             return
-    
+   
     def db_write(self, opportunity):
         """A function to save to the database"""
         for key, value in opportunity.items():
@@ -504,13 +504,13 @@ class Command(BaseCommand):
         data = {"region_distribution": {region: 0 for region in regions_list}}
         data["overall_count"] = len(opportunities)
         data["new_opportunities"] = self.count
-
         for opportunity in opportunities:
             for region in regions_list:
                 if not opportunity.country:
-                    data[region] += 1
-                if opportunity.country.lower() in regions.get(region):
                     data["region_distribution"][region] += 1
+                else:
+                    if opportunity.country.lower() in regions.get(region):
+                        data["region_distribution"][region] += 1
         try:
             new_stats_entry = StatsModel(**data)
             new_stats_entry.save()
