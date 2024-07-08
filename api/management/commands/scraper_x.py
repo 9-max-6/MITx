@@ -297,7 +297,7 @@ class GTAI(BaseScraper):
         if tenders is None:
             tenders = []
 
-        if count == 10:
+        if count == 3:
             return self.get_details(tenders)
 
         if next_page:
@@ -317,7 +317,6 @@ class GTAI(BaseScraper):
         next_page_url = next_page.find('a') if next_page else None
         next_page_actual_url_prefix = next_page_url['href'].split('?')[0] if next_page_url else None 
         next_page_actual_url = 'https://www.gtai.de' + next_page_actual_url_prefix + f"?page={count + 1}"
-        print(next_page_actual_url)
 
         for result in results:
             if 'Tender Notice' in result.get_text():
@@ -374,7 +373,6 @@ class RFXNow(BaseScraper):
         new_ops = []
         for opp in opps:
             if opp and opp.get('procurementNumber') not in opportunities:
-                print(opportunities)
                 print("found new opportunity", opp.get('procurementNumber'))
                 new_ops.append(opp)
         return self.transform_ops(new_ops)
@@ -396,7 +394,6 @@ class RFXNow(BaseScraper):
                     "published": published,
             }
             tender_info.html = opp.get('text') + json.dumps(tender_json)
-            print(str(tender_info))
             tender_details.append(tender_info)
         return tender_details
 
@@ -451,7 +448,6 @@ class Command(BaseCommand):
             if page:
                 opportunity.page = page
                 self.opportunity_structure.update(opportunity.get_json())
-                print(self.opportunity_structure)
                 self.db_write(self.opportunity_structure)
             else:
                 print("Page is none")
@@ -473,7 +469,6 @@ class Command(BaseCommand):
           "ref_number": "1234567890"
         }
         json_response = json.dumps(json_response_raw)
-        print(html_content)
 
         try:
             print("Invoking Langchain")
@@ -482,7 +477,6 @@ class Command(BaseCommand):
                 "json_response": json_response
                 })
             json_result = json.loads(result)
-            print(json_result)
             # I can't predict the opportunity structure
             #if the response from the server is  not okay, send again?
             return json_result

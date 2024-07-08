@@ -121,7 +121,7 @@ class OpportunityView(APIView, JWTAuthentication):
 
     def get_all_opp(self, request, *args, **kwargs):
         """Function to get all args."""
-        opportunities = Opportunity.objects.all().order_by('date_created')
+        opportunities = Opportunity.objects.all().order_by('-date_created')
         serializer = OpportunitySerializer(opportunities, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -144,7 +144,7 @@ class FilteredOpportunityView(APIView, JWTAuthentication):
         """for the get request"""
         self.payload = request
         delim = kwargs.get('delim')
-        opportunities = Opportunity.objects.all().order_by('date_created')
+        opportunities = Opportunity.objects.all().order_by('-date_created')
         region_set = self.regions.get(delim, None)
         if region_set:
             data_list = self.get_datalist(opportunities, region_set)
@@ -168,7 +168,7 @@ class HotOpportunitView(APIView, JWTAuthentication):
     def get(self, request, *args, **kwargs):
         """A function that returns the hot opportunities"""
         self.payload = request
-        opportunities = Opportunity.objects.all().order_by('date_created')[:20]
+        opportunities = Opportunity.objects.all().order_by('-date_created')[:10]
         serializer = OpportunitySerializer(opportunities, many=True)
 
         return Response(serializer.data, status=status.HTTP_200_OK)
