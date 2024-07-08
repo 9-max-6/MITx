@@ -1,7 +1,6 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import "./styles/resetpassword.css";
-import { Link } from "react-router-dom";
 function Archive() {
   return (
     <Box

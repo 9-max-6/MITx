@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Dashboard from "../../dashboard/src/components/Dashboard";
 import Opportunities from "./components/Opportunities";
 import Bids from "../../dashboard/src/components/Bids";
@@ -15,12 +15,9 @@ import { Box } from "@mui/material";
 import { AuthContext } from "./components/Auth/AuthContext";
 import ProtectedRoute from "./components/Auth/ProtectedRoute";
 import Login from "./components/Login";
-import { useNavigate } from "react-router-dom";
 import ResetPassword from "./components/ResetPassword";
 
 function App() {
-  const [loaded, setloaded] = useState(true);
-  const navigate = useNavigate();
   const { isAuthenticated } = useContext(AuthContext);
   return (
     <div className="app">
@@ -108,4 +105,3 @@ function App() {
 }
 
 export default App;
-

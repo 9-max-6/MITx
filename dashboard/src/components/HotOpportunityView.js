@@ -1,16 +1,8 @@
-import { Typography } from "@mui/material";
 import React from "react";
 import { Box } from "@mui/material";
-import {
-  MinimalOpportunityView,
-  SingleOpportunityView,
-} from "./SingleOpportunityView";
-import { useState } from "react";
-import TuneIcon from "@mui/icons-material/Tune";
+import { MinimalOpportunityView } from "./SingleOpportunityView";
 
 const HotOpportunityView = ({ opportunities }) => {
-  const [filteropen, setfilteropen] = useState(false);
-
   return (
     <Box className="flex_2" sx={{}}>
       {opportunities.map((opp, index) => (

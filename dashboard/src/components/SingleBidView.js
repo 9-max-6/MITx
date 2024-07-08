@@ -1,5 +1,5 @@
-import React from "react";
-import { Typography, Card, CardContent, Box, Button } from "@mui/material";
+import React, { useEffect } from "react";
+import { Typography, Box } from "@mui/material";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useState } from "react";
 
@@ -9,12 +9,15 @@ const SingleBidViewDetailed = ({ title, deadline, page, country, link }) => {
   const deadlineCalculator = () => {
     const the_deadline = new Date(deadline);
     const now = new Date();
-    const daysRemanining = deadline - now;
-    if (daysRemanining < 1) {
+    const daysRemaining = the_deadline - now;
+    if (daysRemaining < 1) {
       setexpired(true);
     }
-    return daysRemanining;
+    return daysRemaining;
   };
+  useEffect(() => {
+    deadlineCalculator();
+  }, []);
   return (
     <Box
       sx={{

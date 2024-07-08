@@ -1,18 +1,17 @@
+import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Box, Typography } from "@mui/material";
-import "./styles/dashboard.css";
+import { useTheme } from "@mui/material/styles";
+import Chart from "chart.js/auto";
+import axios from "axios";
 import { AuthContext } from "./Auth/AuthContext";
 import { TrackContext } from "./TrackContext/TrackContext";
-import { Link } from "react-router-dom";
-import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
 import { newtonsCradle } from "ldrs";
-import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import HotOpportunityView from "./HotOpportunityView";
-import { useTheme } from "@mui/material/styles";
 import LineChart from "./utils/LineChart";
 import { BarChart } from "./utils/BarChart";
-import { Data } from "./Data";
+import "./styles/dashboard.css";
 
 Chart.register(CategoryScale);
 
@@ -22,25 +21,6 @@ function Dashboard() {
   const [opps, setopps] = useState(null);
   const [opportunitiesloaded, setopportunitiesloaded] = useState(false);
   const { username } = useContext(AuthContext);
-
-  const [chartData, setChartData] = useState({
-    labels: Data.map((data) => data.year),
-    datasets: [
-      {
-        label: "Users Gained",
-        data: Data.map((data) => data.userGain),
-        backgroundColor: [
-          "rgba(75, 192, 192, 1)",
-          "rgba(236, 240, 241, 1)",
-          "#50AF95",
-          "#f3ba2f",
-          "#2a71d0",
-        ],
-        borderColor: "black",
-        borderWidth: 2,
-      },
-    ],
-  });
 
   newtonsCradle.register();
 
@@ -170,7 +150,7 @@ function Dashboard() {
                 textAlign: "center",
                 padding: "12px",
                 boxSizing: "border-box",
-                marginY: "12px",
+                marginBottom: "12px",
               }}
             >
               <Typography
@@ -188,6 +168,7 @@ function Dashboard() {
               borderRadius="8px"
               display="flex"
               flexDirection="column"
+              minHeight="400px"
               sx={{
                 width: "100%",
                 textAlign: "center",
@@ -206,10 +187,11 @@ function Dashboard() {
                   width: "100%",
                 }}
               >
-                <LineChart chartData={chartData} />
+                <BarChart />
               </Box>
             </Box>
             <Box
+              border="1px solid #ccc"
               borderRadius="8px"
               display="flex"
               flexDirection="column"
@@ -232,7 +214,7 @@ function Dashboard() {
                   my: "48px",
                 }}
               >
-                <BarChart chartData={chartData} />
+                <LineChart />
               </Box>
             </Box>
           </Box>
@@ -268,7 +250,9 @@ function Dashboard() {
           </Box>
         </Box>
       ) : (
-        <div>Redirecting to login page</div>
+        <>
+          {isAuthenticated ? <div></div> : <div>Redirecting to login page</div>}
+        </>
       )}
     </>
   );

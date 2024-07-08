@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import OpportunityView from "./OpportunityView";
+import React, { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Box, Typography, Button } from "@mui/material";
-import TuneIcon from "@mui/icons-material/Tune";
 import { useTheme } from "@mui/material/styles";
-import "./styles/Opportunities.css";
+import TuneIcon from "@mui/icons-material/Tune";
 import { newtonsCradle } from "ldrs";
+import OpportunityView from "./OpportunityView";
+import { AuthContext } from "./Auth/AuthContext";
+import "./styles/Opportunities.css";
 
 function Opportunities() {
   const [opps, setopps] = useState();
@@ -13,10 +15,10 @@ function Opportunities() {
   const [filters, setfilters] = useState(true);
   const [selected, setselected] = useState("");
   const [duration, setduration] = useState("all-time");
-  const [empty, setempty] = useState(true);
   newtonsCradle.register();
-
+  const { setisAuthenticated } = useContext(AuthContext);
   const theme = useTheme();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getData(selected);
@@ -57,9 +59,9 @@ function Opportunities() {
     try {
       var url;
       if (selected === "" || undefined) {
-        var url = "https://mitx.mutukumaxwell.tech/api/opps/";
+        url = "https://mitx.mutukumaxwell.tech/api/opps/";
       } else {
-        var url = `https://mitx.mutukumaxwell.tech/api/opps/region/${filter_selected}`;
+        url = `https://mitx.mutukumaxwell.tech/api/opps/region/${filter_selected}`;
       }
       const response = await axios.get(url, {
         withCredentials: true,
@@ -67,6 +69,11 @@ function Opportunities() {
       setopps(getTimedData(response.data));
       setloaded(true);
     } catch (error) {
+      if (error.status === "403") {
+        setisAuthenticated(false);
+        localStorage.clear();
+        navigate("/login");
+      }
       setopps([]);
       console.log(error);
     } finally {

@@ -5,15 +5,19 @@ import { SingleBidViewDetailed } from "./SingleBidView";
 import { Box, Typography, Card, CardContent } from "@mui/material";
 import { Link } from "react-router-dom";
 import { newtonsCradle } from "ldrs";
+import { useContext } from "react";
 import { useTheme } from "@emotion/react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "./Auth/AuthContext";
 import "./styles/bids.css";
 
 function Bids() {
   const [bidsloaded, setbidsloaded] = useState(false);
-  const [bidscount, setbidscount] = useState(false);
   const [bids, setbids] = useState(null);
   const theme = useTheme();
+  const navigate = useNavigate();
   newtonsCradle.register();
+  const { setisAuthenticated } = useContext(AuthContext);
 
   const getBids = async (e) => {
     await axios
@@ -25,6 +29,11 @@ function Bids() {
         setbidsloaded(true);
       })
       .catch((error) => {
+        if (error.status === "403") {
+          setisAuthenticated(false);
+          localStorage.clear();
+          navigate("/login");
+        }
         console.log(error);
       });
   };

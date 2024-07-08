@@ -1,13 +1,10 @@
-import { Box, Button, Typography } from "@mui/material";
-import React from "react";
-import { Link } from "react-router-dom";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import "./styles/components.css";
-import { useContext } from "react";
-import { AuthContext } from "./Auth/AuthContext";
+import { React, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
+import { Box, Button, Typography, useTheme } from "@mui/material";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-import { useTheme } from "@mui/material";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { AuthContext } from "./Auth/AuthContext";
+import "./styles/components.css";
 
 function Topbar() {
   const { isAuthenticated, setisAuthenticated } = useContext(AuthContext);
