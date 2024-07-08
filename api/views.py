@@ -12,7 +12,7 @@ from rest_framework.exceptions import AuthenticationFailed
 import jwt, datetime
 from .models import Opportunity, StatsModel
 from .models import User
-
+import uuid
 
 class JWTAuthentication:
     __user = None
