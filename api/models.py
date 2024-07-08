@@ -44,7 +44,8 @@ class Opportunity(models.Model):
     )
     country = models.CharField(
         "Opportunity's country",
-        blank=False,
+        blank=True,
+        null=True,
         max_length=100
     )
     website_name = models.CharField(
