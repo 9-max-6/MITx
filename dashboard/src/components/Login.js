@@ -194,12 +194,6 @@ function Login() {
           ></Box>
         </CardContent>
       </Card>
-      <Box
-        className="login-image"
-        sx={{
-          position: "absolute",
-        }}
-      ></Box>
     </Box>
   );
 }

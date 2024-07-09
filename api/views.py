@@ -13,6 +13,7 @@ import jwt, datetime
 from .models import Opportunity, StatsModel
 from .models import User
 import uuid
+import os
 
 class JWTAuthentication:
     __user = None
@@ -22,7 +23,7 @@ class JWTAuthentication:
     def user(self):
         """user getter"""
         try:
-            self.__user = User.objects.get(pk=1)
+            self.__user = User.objects.get(pk=self.payload.get('id'))
         except AttributeError:
             self.__user = None
         return self.__user
@@ -39,7 +40,7 @@ class JWTAuthentication:
         if not token:
             raise AuthenticationFailed('Unauthenticated')
         try:
-            self.__payload = jwt.decode(token, 'secret', algorithms=['HS256'])
+            self.__payload = jwt.decode(token, os.getenv("SECRET"), algorithms=['HS256'])
         except jwt.ExpiredSignatureError:
             raise AuthenticationFailed("Authentication")
         return self.__payload 
@@ -69,7 +70,7 @@ class LoginView(APIView):
             'id': user.id,
             'exp': datetime.datetime.utcnow() + datetime.timedelta(minutes=1000)
         }
-        token = jwt.encode(payload, 'secret', algorithm='HS256')
+        token = jwt.encode(payload, os.getenv("SECRET"), algorithm='HS256')
         response =  Response()
         response.set_cookie(key='jwt', value=token, httponly=True, samesite='None', secure=True)
         response.data = {
@@ -227,7 +228,7 @@ class StatsView(APIView, JWTAuthentication):
                 return Response(serializer.data, status=status.HTTP_200_OK)
             else:
                 if view == "scpx":
-                    stats = StatsModel.objects.order_by('-date_created').all()
+                    stats = StatsModel.objects.order_by('date_created').all()
                     serializer = StatsScraperSerializer(stats, many=True)
                     return Response(serializer.data, status=status.HTTP_200_OK)
 
