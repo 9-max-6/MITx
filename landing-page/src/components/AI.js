@@ -1,13 +1,23 @@
-import { Box, CardContent, Typography, Card } from "@mui/material";
 import React from "react";
+import { Box, CardContent, Typography, Card } from "@mui/material";
+import { useTheme } from "@emotion/react";
 import "./styles/ai.css";
+
 function AI() {
+  const theme = useTheme();
   return (
     <Box
       className="grid"
       display="grid"
       gridTemplateColumns="repeat(12, 1fr)"
-      width="1000px"
+      sx={{
+        width: {
+          xs: "500px",
+          sm: "600px",
+          lg: "720px",
+          xl: "1000px",
+        },
+      }}
       margin="auto"
       gap="24px"
     >
@@ -25,6 +35,11 @@ function AI() {
             color: "#6c63ff",
             fontWeight: "800px",
             textTransform: "uppercase",
+            fontSize: {
+              sm: "large",
+              md: "larger",
+              lg: "x-large",
+            },
           }}
           variant="h5"
         >
@@ -34,6 +49,11 @@ function AI() {
           sx={{
             color: "#1f1650",
             fontWeight: "800px",
+            fontSize: {
+              sm: "small",
+              md: "large",
+              lg: "large",
+            },
           }}
           variant="h6"
         >
@@ -53,7 +73,11 @@ function AI() {
         <Card
           sx={{
             minWidth: "300px",
-            height: "400px",
+            height: {
+              sm: "300px",
+              lg: "400px",
+              xl: "400px",
+            },
             backgroundColor: "inherit",
           }}
         >
@@ -74,7 +98,11 @@ function AI() {
             <Typography
               sx={{
                 color: "#1f1650",
-                fontFamily: "sans-pro",
+                fontSize: {
+                  sm: "small",
+                  md: "large",
+                  lg: "large",
+                },
               }}
             >
               Our AI constantly monitors and scrapes the internet for the latest
@@ -96,7 +124,11 @@ function AI() {
         <Card
           sx={{
             minWidth: "300px",
-            height: "400px",
+            height: {
+              sm: "300px",
+              lg: "400px",
+              xl: "400px",
+            },
             backgroundColor: "inherit",
             flexFlow: "1",
           }}
@@ -118,7 +150,11 @@ function AI() {
             <Typography
               sx={{
                 color: "#1f1650",
-                fontFamily: "sans-pro",
+                fontSize: {
+                  sm: "small",
+                  md: "large",
+                  lg: "large",
+                },
               }}
             >
               The AI filters through vast amounts of data, discarding irrelevant
@@ -140,7 +176,11 @@ function AI() {
         <Card
           sx={{
             flexGrow: "1",
-            height: "400px",
+            height: {
+              sm: "300px",
+              lg: "400px",
+              xl: "400px",
+            },
             backgroundColor: "inherit",
           }}
         >
@@ -161,7 +201,11 @@ function AI() {
             <Typography
               sx={{
                 color: "#1f1650",
-                fontFamily: "sans-pro",
+                fontSize: {
+                  sm: "small",
+                  md: "large",
+                  lg: "large",
+                },
               }}
             >
               Using advanced natural language processing (NLP) techniques, our
@@ -183,7 +227,11 @@ function AI() {
       >
         <Card
           sx={{
-            height: "400px",
+            height: {
+              sm: "300px",
+              lg: "400px",
+              xl: "400px",
+            },
             backgroundColor: "inherit",
             flexGrow: "1",
           }}
@@ -205,7 +253,11 @@ function AI() {
             <Typography
               sx={{
                 color: "#1f1650",
-                fontFamily: "sans-pro",
+                fontSize: {
+                  sm: "small",
+                  md: "large",
+                  lg: "large",
+                },
               }}
             >
               Our AI learns from your company data and corporate objectives,

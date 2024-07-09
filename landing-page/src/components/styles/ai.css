@@ -20,7 +20,6 @@
     display: flex;
     list-style-type: none;
     justify-content: center;
-    
 }
 
 .title-ai
@@ -37,16 +36,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-   
 }
 .bg-ai-insights {
     background-image: url('../../../public/absorbed.svg');
     background-size: contain;
     position: absolute;
-    height: 400px;
-    width: 400px;
-    bottom: 72px;
-    right: 72px;
+    
     background-repeat: no-repeat;
 }
 
@@ -54,10 +49,70 @@
     display: flex;
     list-style-type: none;
     justify-content: center;
-    gap: 12px;
+    gap: 36px;
 }
 .span {
     text-transform: capitalize;
     color: #6c63ff;
     font-weight: 800;
 }
+
+/* Extra-small devices (phones, 0px and up) */
+@media (min-width: 0px) {
+    .card-list {
+        gap: 24px;
+    }
+  }
+  
+  /* Small devices (tablets, 600px and up) */
+  @media (min-width: 600px) {
+    .bg-ai-insights {
+        height: 200px;
+        width: 200px;
+        bottom: 200px;
+        right: 36px;
+    }
+    .card-list {
+        gap: 36px;
+    }
+  }
+  
+  /* Medium devices (desktops, 960px and up) */
+  @media (min-width: 960px) {
+    .bg-ai-insights {
+        height: 300px;
+        width: 300px;
+        bottom: 72px;
+        right: 72px;
+    }
+    .card-list {
+        gap: 48px;
+    }
+  }
+  
+  /* Large devices (large desktops, 1280px and up) */
+  @media (min-width: 1280px) {
+    .bg-ai-insights {
+        height: 400px;
+        width: 400px;
+        bottom: 72px;
+        right: 72px;
+    }
+    .card-list {
+        gap: 64px;
+    }
+  }
+  
+  /* Extra-large devices (larger desktops, 1920px and up) */
+  @media (min-width: 1920px) {
+    .bg-ai-insights {
+        height: 400px;
+        width: 400px;
+        bottom: 72px;
+        right: 72px;
+    }
+    .card-list {
+        gap: 72px;
+    }
+  }
+  

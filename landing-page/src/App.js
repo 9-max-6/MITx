@@ -9,8 +9,10 @@ import "./App.css";
 import Insights from "./components/Insights";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { useTheme } from "@emotion/react";
 
 function App() {
+  const theme = useTheme();
   return (
     <Box className="app-wrapper">
       <Navbar />

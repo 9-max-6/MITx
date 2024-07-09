@@ -1,56 +1,73 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import { useTheme } from "@emotion/react";
 import "./styles/how.css";
 function How() {
+  const theme = useTheme();
   return (
     <Box
       className="grid"
       display="grid"
       gridTemplateColumns="repeat(12, 1fr)"
+      sx={{
+        marginX: {
+          xs: "0px",
+          sm: "0px",
+          lg: "200px",
+          xl: "300px",
+        },
+      }}
       gridAutoRows="200px"
-      marginX="200px"
     >
       <Box
-        gridColumn="span 2"
-        gridRow="span 2"
-        display="flex"
-        position="relative"
-      ></Box>
-      <Box
         className="illustration"
-        gridColumn="span 5"
+        gridColumn="span 6"
         gridRow="span 2"
         display="flex"
         position="relative"
         justifyContent="center"
         alignItems="center"
-        padding="36px"
+        sx={{
+          padding: {
+            xs: "8px",
+            sm: "12px",
+            lg: "24px",
+            xl: "36px",
+          },
+        }}
       >
         <Box className="problem-illustration"></Box>
       </Box>
       <Box
-        gridColumn="span 5"
+        gridColumn="span 6"
         gridRow="span 2"
         display="flex"
         position="relative"
-        justifyContent="center"
         alignItems="center"
-        padding="36px"
         sx={{
           "&:hover": {
             backgroundColor: "#dde2ff",
             borderRadius: "24px",
             transition: "0.3s ease-in-out",
           },
+          padding: {
+            xs: "8px",
+            sm: "12px",
+            lg: "24px",
+            xl: "36px",
+          },
         }}
       >
-        <Box className="blur"></Box>
-
         <Typography
           className="typo"
           sx={{
             color: "#1f1650",
             fontWeight: "100",
+            fontSize: {
+              sm: "large",
+              md: "larger",
+              lg: "x-large",
+            },
           }}
           variant="h6"
         >
@@ -61,34 +78,23 @@ function How() {
       </Box>
 
       <Box
-        gridColumn="span 2"
-        gridRow="span 2"
-        display="flex"
-        position="relative"
-      >
-        <Typography
-          sx={{
-            color: "#6c63ff",
-            fontWeight: "700",
-          }}
-          variant="h6"
-        >
-          Scrape
-        </Typography>
-      </Box>
-      <Box
-        gridColumn="span 5"
+        gridColumn="span 6"
         gridRow="span 2"
         display="flex"
         position="relative"
         justifyContent="center"
         alignItems="center"
-        padding="36px"
         sx={{
           "&:hover": {
             backgroundColor: "#dde2ff",
             borderRadius: "24px",
             transition: "0.3s ease-in-out",
+          },
+          padding: {
+            xs: "8px",
+            sm: "12px",
+            lg: "24px",
+            xl: "36px",
           },
         }}
       >
@@ -98,6 +104,11 @@ function How() {
           sx={{
             color: "#1f1650",
             fontWeight: "100",
+            fontSize: {
+              sm: "large",
+              md: "larger",
+              lg: "x-large",
+            },
           }}
           variant="h6"
         >
@@ -107,35 +118,26 @@ function How() {
         </Typography>
       </Box>
       <Box
-        gridColumn="span 5"
+        gridColumn="span 6"
         gridRow="span 2"
         display="flex"
         position="relative"
         justifyContent="center"
         alignItems="center"
-        padding="36px"
+        sx={{
+          padding: {
+            xs: "8px",
+            sm: "12px",
+            lg: "24px",
+            xl: "36px",
+          },
+        }}
       >
         <Box className="animate"></Box>
       </Box>
+
       <Box
-        gridColumn="span 2"
-        gridRow="span 2"
-        display="flex"
-        position="relative"
-        className="steps"
-      >
-        <Typography
-          sx={{
-            color: "#6c63ff",
-            fontWeight: "700",
-          }}
-          variant="h6"
-        >
-          Extract
-        </Typography>
-      </Box>
-      <Box
-        gridColumn="span 5"
+        gridColumn="span 6"
         gridRow="span 2"
         display="flex"
         position="relative"
@@ -146,7 +148,7 @@ function How() {
         <Box className="extraction"></Box>
       </Box>
       <Box
-        gridColumn="span 5"
+        gridColumn="span 6"
         gridRow="span 2"
         display="flex"
         position="relative"
@@ -159,6 +161,12 @@ function How() {
             borderRadius: "24px",
             transition: "0.3s ease-in-out",
           },
+          padding: {
+            xs: "8px",
+            sm: "12px",
+            lg: "24px",
+            xl: "36px",
+          },
         }}
       >
         <Box className="blur"></Box>
@@ -167,6 +175,11 @@ function How() {
           sx={{
             color: "#1f1650",
             fontWeight: "100",
+            fontSize: {
+              sm: "large",
+              md: "larger",
+              lg: "x-large",
+            },
           }}
           variant="h6"
         >
@@ -176,36 +189,25 @@ function How() {
           present your ideas to organization.
         </Typography>
       </Box>
+
       <Box
-        className="steps"
-        gridColumn="span 2"
-        gridRow="span 2"
-        display="flex"
-        position="relative"
-      >
-        <Typography
-          sx={{
-            color: "#6c63ff",
-            fontWeight: "700",
-          }}
-          variant="h6"
-        >
-          Curate
-        </Typography>
-      </Box>
-      <Box
-        gridColumn="span 5"
+        gridColumn="span 6"
         gridRow="span 2"
         display="flex"
         position="relative"
         justifyContent="center"
         alignItems="center"
-        padding="36px"
         sx={{
           "&:hover": {
             backgroundColor: "#dde2ff",
             borderRadius: "24px",
             transition: "0.3s ease-in-out",
+          },
+          padding: {
+            xs: "8px",
+            sm: "12px",
+            lg: "24px",
+            xl: "36px",
           },
         }}
       >
@@ -215,6 +217,11 @@ function How() {
           sx={{
             color: "#1f1650",
             fontWeight: "100",
+            fontSize: {
+              sm: "large",
+              md: "larger",
+              lg: "x-large",
+            },
           }}
           variant="h6"
         >
@@ -226,13 +233,20 @@ function How() {
         </Typography>
       </Box>
       <Box
-        gridColumn="span 5"
+        gridColumn="span 6"
         gridRow="span 2"
         display="flex"
         position="relative"
         justifyContent="center"
         alignItems="center"
-        padding="36px"
+        sx={{
+          padding: {
+            xs: "8px",
+            sm: "12px",
+            lg: "24px",
+            xl: "36px",
+          },
+        }}
       >
         <Box className="productivity"></Box>
       </Box>

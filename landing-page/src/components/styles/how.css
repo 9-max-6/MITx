@@ -7,11 +7,11 @@
 }
 .problem-illustration {
     border-radius: 12px;
-    
     height: 70%;
     width: 70%;
     background-image: url('../../../public/problem.svg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .productivity {
     border-radius: 12px;
@@ -19,7 +19,8 @@
     height: 70%;
     width: 70%;
     background-image: url('../../../public/productivity.svg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 
 }
 .extraction {
@@ -28,7 +29,8 @@
     height: 70%;
     width: 70%;
     background-image: url('../../../public/curate.svg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     
 
 
@@ -36,11 +38,11 @@
 
 .animate {
     border-radius: 12px;
-    
     height: 70%;
     width: 70%;
     background-image: url('../../../public/animate.svg');
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
 
 
 }
@@ -50,8 +52,29 @@
     font-weight: "700";
 }
 
-.blur {
-    box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
--webkit-box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
--moz-box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
-}
+
+/* Extra-small devices (phones, 0px and up) */
+@media (min-width: 0px) {
+  
+  }
+  
+  /* Small devices (tablets, 600px and up) */
+  @media (min-width: 600px) {
+ 
+  }
+  
+  /* Medium devices (desktops, 960px and up) */
+  @media (min-width: 960px) {
+ 
+  }
+  
+  /* Large devices (large desktops, 1280px and up) */
+  @media (min-width: 1280px) {
+ 
+  }
+  
+  /* Extra-large devices (larger desktops, 1920px and up) */
+  @media (min-width: 1920px) {
+ 
+  }
+  

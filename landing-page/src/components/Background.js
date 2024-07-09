@@ -8,16 +8,33 @@ function Background() {
       <Box
         className="background-remote"
         sx={{
-          height: "300px",
-          width: "300px",
+          height: {
+            md: "200px",
+            lg: "200px",
+            xl: "300px",
+          },
+          width: {
+            md: "200px",
+            lg: "200px",
+            xl: "300px",
+          },
           position: "absolute",
         }}
       ></Box>
       <Box
         className="background-vision"
         sx={{
-          height: "300px",
-          width: "300px",
+          height: {
+            md: "200px",
+            lg: "200px",
+            xl: "300px",
+          },
+          width: {
+            md: "200px",
+            lg: "200px",
+            xl: "300px",
+          },
+
           position: "absolute",
         }}
       ></Box>

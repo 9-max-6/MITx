@@ -18,21 +18,65 @@
 
 .background-remote {
     background-image: url("../../../public/absolute-remote.svg");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;  
-    left: 72px;
-    bottom: 100px;
 }
 
 .background-vision {
     background-image: url("../../../public/background-vision.svg");
     background-size: contain;
     background-repeat: no-repeat;  
-    right: 172px;
 }
 
-.blur {
-    box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
--webkit-box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
--moz-box-shadow: 0px 0px 400px 200px rgba(80,54,245,0.46);
-}
+
+  /* Small devices (tablets, 600px and up) */
+  @media (min-width: 600px) {
+    .background-remote {    
+        left: 36px;
+        bottom: 200px;
+    }
+    .background-vision {    
+        right: 0px;
+        top: 0px;
+    }
+    .home-content {
+        margin-top: 30px;
+    }
+  }
+  
+  /* Medium devices (desktops, 960px and up) */
+  @media (min-width: 960px) {
+    .background-remote {    
+        left: 72px;
+        bottom: 200px;
+    }
+    .background-vision {    
+        right: 36px;
+        top: 0px;
+    }
+  }
+  
+  /* Large devices (large desktops, 1280px and up) */
+  @media (min-width: 1280px) {
+    .background-remote {    
+        left: 72px;
+        bottom: 100px;
+    } 
+    .background-vision {    
+        right: 36px;
+        top: 0px;
+    }
+  }
+  
+  /* Extra-large devices (larger desktops, 1920px and up) */
+  @media (min-width: 1920px) {
+    .background-remote {    
+        left: 72px;
+        bottom: 100px;
+    }
+    .background-vision {    
+        right: 100px;
+        top: 0px;
+    }
+  }
+  

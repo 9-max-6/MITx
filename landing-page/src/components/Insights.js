@@ -10,7 +10,14 @@ function Insights() {
       display="flex"
       justifyContent="center"
       alignSelf="flex-start"
-      width="1000px"
+      sx={{
+        width: {
+          xs: "500px",
+          sm: "600px",
+          lg: "720px",
+          xl: "1000px",
+        },
+      }}
       margin="auto"
     >
       <Card
@@ -33,7 +40,12 @@ function Insights() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "36px",
+                gap: {
+                  xs: "8px",
+                  sm: "12px",
+                  lg: "24px",
+                  xl: "36px",
+                },
               }}
             >
               <li>
@@ -41,7 +53,11 @@ function Insights() {
                 <Typography
                   sx={{
                     color: "#1f1650",
-                    fontFamily: "sans-pro",
+                    fontSize: {
+                      sm: "large",
+                      md: "larger",
+                      lg: "x-large",
+                    },
                   }}
                 >
                   <span className="span">Up-to-date:</span> Stay informed with
@@ -54,7 +70,11 @@ function Insights() {
                 <Typography
                   sx={{
                     color: "#1f1650",
-                    fontFamily: "sans-pro",
+                    fontSize: {
+                      sm: "large",
+                      md: "larger",
+                      lg: "x-large",
+                    },
                   }}
                 >
                   <span className="span">Quality:</span> Enjoy high-quality
@@ -67,7 +87,12 @@ function Insights() {
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                gap: "36px",
+                gap: {
+                  xs: "8px",
+                  sm: "12px",
+                  lg: "24px",
+                  xl: "36px",
+                },
               }}
             >
               <li>
@@ -75,7 +100,11 @@ function Insights() {
                 <Typography
                   sx={{
                     color: "#1f1650",
-                    fontFamily: "sans-pro",
+                    fontSize: {
+                      sm: "large",
+                      md: "larger",
+                      lg: "x-large",
+                    },
                   }}
                 >
                   <span className="span">Relevance:</span> Experience a
@@ -88,7 +117,11 @@ function Insights() {
                 <Typography
                   sx={{
                     color: "#1f1650",
-                    fontFamily: "sans-pro",
+                    fontSize: {
+                      sm: "large",
+                      md: "larger",
+                      lg: "x-large",
+                    },
                   }}
                 >
                   <span className="span">Efficiency:</span> Save time with
@@ -115,15 +148,38 @@ function Insights() {
             color: "#6c63ff",
             fontWeight: "800px",
             textTransform: "uppercase",
+            fontSize: {
+              sm: "large",
+              md: "larger",
+              lg: "x-large",
+            },
           }}
         >
           Our Commitment to Privacy
         </Typography>
-        <Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              sm: "0.5rem",
+              md: "1rem",
+              lg: "1rem",
+            },
+          }}
+        >
           Your privacy is our priority. Our AI systems are designed to protect
           your data and ensure that any information used for personalization
         </Typography>
-        <Typography>is handled securely and ethically.</Typography>
+        <Typography
+          sx={{
+            fontSize: {
+              sm: "0.5rem",
+              md: "1rem",
+              lg: "1rem",
+            },
+          }}
+        >
+          is handled securely and ethically.
+        </Typography>
       </Box>
       <Box className="bg-ai-insights"></Box>
     </Box>
