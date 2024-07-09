@@ -17,7 +17,6 @@ function LineChart() {
         }
       );
       setdata(response.data);
-      console.log(Object.keys(data));
 
       setloaded(true);
     } catch (e) {
@@ -33,11 +32,18 @@ function LineChart() {
     setChartData({
       labels: data.map((acolyte) => {
         const date = new Date(acolyte.date_created);
-        return date;
+        const dateString = JSON.stringify(date);
+        console.log(dateString.split("T"));
+        return dateString
+          .split("T")[0]
+          .split('"')[1]
+          .split("-")
+          .splice(1, 2)
+          .join("-");
       }),
       datasets: [
         {
-          label: "Users Gained",
+          label: "Opportunities identified",
           data: data.map((entry) => entry.new_opportunities),
           backgroundColor: [
             "rgba(75, 192, 192, 1)",
@@ -48,6 +54,7 @@ function LineChart() {
           ],
           borderColor: "black",
           borderWidth: 2,
+          tension: 0.4,
         },
       ],
     });
