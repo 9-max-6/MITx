@@ -63,7 +63,18 @@ function LineChart() {
     <>
       {loaded ? (
         <div className="chart-container">
-          <Typography style={{ textAlign: "center" }} variant="h5">
+          <Typography
+            style={{
+              textAlign: "center",
+              fontSize: {
+                sm: "12px",
+                md: "12px",
+                lg: "16px",
+                xl: "16px",
+              },
+            }}
+            variant="h5"
+          >
             Opportunity identification
           </Typography>
           <Line

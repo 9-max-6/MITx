@@ -16,7 +16,9 @@ root.render(
       <ThemeProvider theme={theme}>
         <AuthProvider>
           <TrackProvider>
-            <App />
+            <CssBaseline>
+              <App />
+            </CssBaseline>
           </TrackProvider>
         </AuthProvider>
       </ThemeProvider>

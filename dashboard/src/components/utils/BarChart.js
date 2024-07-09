@@ -55,7 +55,18 @@ export const BarChart = () => {
     <>
       {loaded && chartData ? (
         <div className="chart-container">
-          <Typography style={{ textAlign: "center" }} variant="h5">
+          <Typography
+            style={{
+              textAlign: "center",
+              fontSize: {
+                sm: "12px",
+                md: "12px",
+                lg: "16px",
+                xl: "16px",
+              },
+            }}
+            variant="h5"
+          >
             Opportunities
           </Typography>
           <Bar

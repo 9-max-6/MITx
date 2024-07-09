@@ -93,19 +93,16 @@ function Opportunities() {
           sx={{
             display: "flex",
             marginX: "36px",
+            minWidth: "800px",
+            alignItems: "flex-start",
           }}
         >
-          <Box
-            sx={{
-              minWidth: "1000px",
-            }}
-          >
+          <Box width="70%">
             <Box
               className="flex"
               sx={{
                 boxSizing: "border-box",
-                maxWidth: "1200px",
-                minWidth: "1200px",
+                width: "100%",
               }}
             >
               <OpportunityView opportunities={opps} />
@@ -113,14 +110,18 @@ function Opportunities() {
           </Box>
           <Box
             sx={{
-              width: "400px",
+              width: "30%",
               marginY: "64px",
               marginLeft: "24px",
-              padding: "24px",
+              padding: {
+                sm: "12px",
+                lg: "16px",
+                xl: "24px",
+              },
               borderRadius: "8px",
               border: `${filters ? "1px solid #ccc" : "none"}`,
               backgroundColor: `${filters ? "#dde2ff" : "inherit"}`,
-              height: `${filters ? "700px" : "0px"}`,
+              height: `${filters ? "auto" : "0px"}`,
             }}
           >
             <Box

@@ -69,6 +69,8 @@ function Dashboard() {
           <Box
             sx={{
               width: "40%",
+              minWidth: "400px",
+              flexShrink: "0",
             }}
           >
             <Box
@@ -77,7 +79,11 @@ function Dashboard() {
               border="1px solid #ccc"
               borderRadius="8px"
               sx={{
-                padding: "48px",
+                padding: {
+                  sm: "24px",
+                  md: "36px",
+                  lg: "48px",
+                },
               }}
             >
               {userloaded && (
@@ -94,7 +100,12 @@ function Dashboard() {
                     </Typography>
                     <Typography
                       sx={{
-                        fontFamily: "Lexend, sans-serif",
+                        fontSize: {
+                          sm: "12px",
+                          md: "12px",
+                          lg: "16px",
+                          xl: "16px",
+                        },
                       }}
                       variant="body1"
                     >
@@ -126,6 +137,12 @@ function Dashboard() {
                   fontWeight: "700",
                   color: "#6c63ff",
                   textTransform: "uppercase",
+                  fontSize: {
+                    sm: "12px",
+                    md: "12px",
+                    lg: "16px",
+                    xl: "16px",
+                  },
                 }}
               >
                 News
@@ -136,7 +153,18 @@ function Dashboard() {
                   justifyContent: "space-between",
                 }}
               >
-                <Typography>Check here for any news updates</Typography>
+                <Typography
+                  sx={{
+                    fontSize: {
+                      sm: "12px",
+                      md: "12px",
+                      lg: "16px",
+                      xl: "16px",
+                    },
+                  }}
+                >
+                  Check here for any news updates
+                </Typography>
                 <Box className="news"></Box>
               </Box>
             </Box>
@@ -158,6 +186,12 @@ function Dashboard() {
                   fontWeight: "700",
                   color: "#6c63ff",
                   textTransform: "uppercase",
+                  fontSize: {
+                    sm: "12px",
+                    md: "12px",
+                    lg: "16px",
+                    xl: "16px",
+                  },
                 }}
               >
                 Statistics
@@ -168,7 +202,6 @@ function Dashboard() {
               borderRadius="8px"
               display="flex"
               flexDirection="column"
-              minHeight="400px"
               sx={{
                 width: "100%",
                 textAlign: "center",
@@ -183,7 +216,12 @@ function Dashboard() {
             >
               <Box
                 sx={{
-                  height: "300px",
+                  height: {
+                    sm: "200px",
+                    md: "200px",
+                    lg: "250px",
+                    xl: "300px",
+                  },
                   width: "100%",
                 }}
               >
@@ -209,7 +247,12 @@ function Dashboard() {
             >
               <Box
                 sx={{
-                  height: "300px",
+                  height: {
+                    sm: "150px",
+                    md: "200px",
+                    lg: "250px",
+                    xl: "300px",
+                  },
                   width: "100%",
                   my: "48px",
                 }}

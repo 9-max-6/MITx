@@ -41,7 +41,11 @@ function App() {
         <Box
           className="mainContent"
           sx={{
-            width: isAuthenticated ? "calc(100% - 128px)" : "100%",
+            width: {
+              xs: isAuthenticated ? "calc(100% - 32px)" : "100%",
+              lg: isAuthenticated ? "calc(100% - 64px)" : "100%",
+              xl: isAuthenticated ? "calc(100% - 128px)" : "100%",
+            },
             margin: isAuthenticated ? "128px auto 0 auto" : "0px",
           }}
         >

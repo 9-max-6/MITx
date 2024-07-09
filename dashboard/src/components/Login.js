@@ -50,8 +50,14 @@ function Login() {
       <Card
         sx={{
           alignSelf: "center",
-          height: "480px",
-          width: "560px",
+          height: {
+            lg: "400px",
+            xl: "480px",
+          },
+          width: {
+            lg: "480px",
+            xl: "560px",
+          },
           gap: "36px",
           backgroundColor: "inherit",
         }}
