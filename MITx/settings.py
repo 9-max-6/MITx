@@ -20,17 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-z1ab^1f48og(wd!bi9g-(r)ll_xd0@f2-vjec2_yfr1wda*h-m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+SECRET_KEY = "ff"
 
 ALLOWED_HOSTS = ["127.0.0.1", "48.217.169.242", "mitx.mutukumaxwell.tech"]
 
 CORS_ALLOWED_ORIGINS = [
         "http://mitx.mutukumaxwell.tech",
-    "http://localhost:3000",  # Add your frontend URL here
-    "https://your-production-domain.com",  # Add your production frontend URL here
+    "http://localhost:3000",  #
 ]
 
 # Application definition
