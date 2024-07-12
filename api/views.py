@@ -228,8 +228,8 @@ class StatsView(APIView, JWTAuthentication):
                 return Response(serializer.data, status=status.HTTP_200_OK)
             else:
                 if view == "scpx":
-                    stats = StatsModel.objects.order_by('date_created').all()
-                    serializer = StatsScraperSerializer(stats, many=True)
+                    proc_stats = StatsModel.objects.order_by('-date_created')[:20]
+                    serializer = StatsScraperSerializer(proc_stats, many=True)
                     return Response(serializer.data, status=status.HTTP_200_OK)
 
 

@@ -1313,3 +1313,725 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 Page is none
 StatsModel object (7327321f-b008-429a-9a80-3c2b5906537a)
 Script ended at Wed Jul 10 07:00:07 UTC 2024
+Starting script at Wed Jul 10 08:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (10b6b853-aced-47b5-846e-20261bd0b680)
+Script ended at Wed Jul 10 08:00:05 UTC 2024
+Starting script at Wed Jul 10 09:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (a6d67ba0-8ddb-44b0-86d2-d27a59da7778)
+Script ended at Wed Jul 10 09:00:07 UTC 2024
+Starting script at Wed Jul 10 10:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (b78474c6-3722-47b2-8f0a-65dff33b57e5)
+Script ended at Wed Jul 10 10:00:06 UTC 2024
+Starting script at Wed Jul 10 11:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (535b3836-1e4c-498c-a411-e632d11fae49)
+Script ended at Wed Jul 10 11:00:06 UTC 2024
+Starting script at Wed Jul 10 12:00:02 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (22b4dd98-bcc5-4f38-9f67-b5a600e15fb2)
+Script ended at Wed Jul 10 12:00:07 UTC 2024
+Starting script at Wed Jul 10 13:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (977aa8ad-d0ce-461d-84ad-02d8bdf14988)
+Script ended at Wed Jul 10 13:00:06 UTC 2024
+Starting script at Wed Jul 10 14:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (36ba5691-d58e-4ed7-b9cc-c73456ec2c62)
+Script ended at Wed Jul 10 14:00:06 UTC 2024
+Starting script at Wed Jul 10 15:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002010070
+found new opportunity 0002009661
+Running query batch on payload size 2 
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (edd9e04d-125b-447e-b6ae-b882667c443e)
+Script ended at Wed Jul 10 15:00:12 UTC 2024
+Starting script at Wed Jul 10 16:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (6c03416d-132f-4b58-9e7e-a049c126cc2e)
+Script ended at Wed Jul 10 16:00:06 UTC 2024
+Starting script at Wed Jul 10 17:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002010118
+found new opportunity 0002009661
+Running query batch on payload size 2 
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (f0d0ae5b-cd37-47ee-8365-294df3bb8fe8)
+Script ended at Wed Jul 10 17:00:11 UTC 2024
+Starting script at Wed Jul 10 18:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (75ac5ad2-f850-43db-b530-5fa50a26bb19)
+Script ended at Wed Jul 10 18:00:06 UTC 2024
+Starting script at Wed Jul 10 19:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (cf2dce50-125f-4c85-93f3-04523593558c)
+Script ended at Wed Jul 10 19:00:06 UTC 2024
+Starting script at Wed Jul 10 20:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (ba2fcbd2-9e86-4f88-92c1-ddba5860c64a)
+Script ended at Wed Jul 10 20:00:07 UTC 2024
+Starting script at Wed Jul 10 21:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (02f37f4d-08ce-455e-84ce-ae3fda44efa9)
+Script ended at Wed Jul 10 21:00:05 UTC 2024
+Starting script at Wed Jul 10 22:00:02 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+Checking tender Gender and Social Awareness Consultant for Water Loss Reduction Programme
+Checking tender Consulting, Feasibility Study and Technical Specifications (Solar Power)
+found new opportunity 0002009661
+Running query batch on payload size 3 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Saving opportunity
+StatsModel object (dccb50b8-6781-4bf7-a36f-4739a79d99e7)
+Script ended at Wed Jul 10 22:00:33 UTC 2024
+Starting script at Wed Jul 10 23:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (2d416d3b-1dce-40e3-8bb8-191497c9ceaa)
+Script ended at Wed Jul 10 23:00:06 UTC 2024
+Starting script at Thu Jul 11 00:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (e2cc6763-562b-459c-9a04-3e718e2aec6b)
+Script ended at Thu Jul 11 00:00:06 UTC 2024
+Starting script at Thu Jul 11 01:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (52233c26-a6bb-4371-a597-d080b8a63943)
+Script ended at Thu Jul 11 01:00:06 UTC 2024
+Starting script at Thu Jul 11 02:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (bd740a50-15bc-417a-8953-708b640be1d2)
+Script ended at Thu Jul 11 02:00:06 UTC 2024
+Starting script at Thu Jul 11 03:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (ace6ce58-b547-4abd-bdc2-32e042b9bac9)
+Script ended at Thu Jul 11 03:00:06 UTC 2024
+Starting script at Thu Jul 11 04:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002010121
+found new opportunity 0002010092
+found new opportunity 0002009983
+found new opportunity 0002009661
+Running query batch on payload size 4 
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (9611e51e-0d83-4640-a164-f7a18afde30f)
+Script ended at Thu Jul 11 04:00:18 UTC 2024
+Starting script at Thu Jul 11 05:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (dfd22f3f-8406-4242-a927-8b0564891f9e)
+Script ended at Thu Jul 11 05:00:05 UTC 2024
+Starting script at Thu Jul 11 06:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002010137
+found new opportunity 0002009661
+Running query batch on payload size 2 
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (d5d53058-03a9-4545-95e7-eea9065ac123)
+Script ended at Thu Jul 11 06:00:09 UTC 2024
+Starting script at Thu Jul 11 07:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (54e93448-3b99-448a-93bb-b1abc90643d3)
+Script ended at Thu Jul 11 07:00:06 UTC 2024
+Starting script at Thu Jul 11 08:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (7a8fed3f-575d-4afe-b1f6-3dd2d0d3a304)
+Script ended at Thu Jul 11 08:00:06 UTC 2024
+Starting script at Thu Jul 11 09:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (4a4a942b-8e8f-4f9e-9c6f-edce8b52d204)
+Script ended at Thu Jul 11 09:00:06 UTC 2024
+Starting script at Thu Jul 11 10:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (bf2b43b6-0b1f-453a-a8c6-3db14ee2c5ba)
+Script ended at Thu Jul 11 10:00:06 UTC 2024
+Starting script at Thu Jul 11 11:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (26116482-b30f-4c46-9b6e-6b98c8cd4405)
+Script ended at Thu Jul 11 11:00:06 UTC 2024
+Starting script at Thu Jul 11 12:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (f1b6aee5-c39c-424d-8a91-15d9e9fd3f10)
+Script ended at Thu Jul 11 12:00:06 UTC 2024
+Starting script at Thu Jul 11 13:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (fc0fd770-3465-437d-9d17-a1e13482cae4)
+Script ended at Thu Jul 11 13:00:06 UTC 2024
+Starting script at Thu Jul 11 14:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (b9404ac5-a014-43e3-a6be-22239ad3cc72)
+Script ended at Thu Jul 11 14:00:05 UTC 2024
+Starting script at Thu Jul 11 15:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (8ea05177-59cd-4014-98e3-9ffc46abcc37)
+Script ended at Thu Jul 11 15:00:06 UTC 2024
+Starting script at Thu Jul 11 16:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (4a8be798-3600-44bb-91bd-7f8aa7d53731)
+Script ended at Thu Jul 11 16:00:06 UTC 2024
+Starting script at Thu Jul 11 17:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (61589f1c-57e3-47a5-bbc0-e62b61f1b092)
+Script ended at Thu Jul 11 17:00:06 UTC 2024
+Starting script at Thu Jul 11 18:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (af4522fe-11d8-4490-a488-b65c81b9b28c)
+Script ended at Thu Jul 11 18:00:06 UTC 2024
+Starting script at Thu Jul 11 19:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+found new opportunity 0002009450
+Running query batch on payload size 2 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+Invoking Langchain
+Saving opportunity
+StatsModel object (6b25c514-af5b-4a8e-87ca-34197ec204e4)
+Script ended at Thu Jul 11 19:00:09 UTC 2024
+Starting script at Thu Jul 11 20:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (c48f8c00-9d32-4cd9-ac4c-6d2ce4e8a1c1)
+Script ended at Thu Jul 11 20:00:07 UTC 2024
+Starting script at Thu Jul 11 21:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (013b585d-ac09-4e59-acbc-c037ef7ea10e)
+Script ended at Thu Jul 11 21:00:06 UTC 2024
+Starting script at Thu Jul 11 22:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+Checking tender Automatic Fare Collection System
+Checking tender Automatic Fare Collection System
+found new opportunity 0002009903
+found new opportunity 0002009661
+Running query batch on payload size 4 
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+Invoking Langchain
+Saving opportunity
+Invoking Langchain
+Saving opportunity
+StatsModel object (18d05c68-fd05-491a-addd-c615107c50c4)
+Script ended at Thu Jul 11 22:00:45 UTC 2024
+Starting script at Thu Jul 11 23:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (628fda8d-b81d-4f6e-a873-c2de427d49c9)
+Script ended at Thu Jul 11 23:00:06 UTC 2024
+Starting script at Fri Jul 12 00:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (318b980b-4b3e-473a-bb19-9d2fd65d1928)
+Script ended at Fri Jul 12 00:00:07 UTC 2024
+Starting script at Fri Jul 12 01:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (23e3bff2-b1fb-48b4-b0c5-a09d7da4123b)
+Script ended at Fri Jul 12 01:00:06 UTC 2024
+Starting script at Fri Jul 12 02:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (2c7fe92f-bf10-42c2-8067-6cf488c48465)
+Script ended at Fri Jul 12 02:00:06 UTC 2024
+Starting script at Fri Jul 12 03:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (5d1335f1-e879-4f45-8409-323ada3c4780)
+Script ended at Fri Jul 12 03:00:07 UTC 2024
+Starting script at Fri Jul 12 04:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (7602634d-a99f-4259-91fb-1399bf0f7561)
+Script ended at Fri Jul 12 04:00:06 UTC 2024
+Starting script at Fri Jul 12 05:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (23bd6fae-dce5-42ad-a4e8-373d89bf36af)
+Script ended at Fri Jul 12 05:00:06 UTC 2024
+Starting script at Fri Jul 12 06:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (77141719-950a-4562-b826-45b06bdacf60)
+Script ended at Fri Jul 12 06:00:06 UTC 2024
+Starting script at Fri Jul 12 07:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (a3ddbbd4-a7fc-40ac-9f9e-e35185cdb26b)
+Script ended at Fri Jul 12 07:00:06 UTC 2024
+Starting script at Fri Jul 12 08:00:01 UTC 2024
+Current PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+Current Python: /usr/bin/python3
+After activating venv, PATH: /home/azureuser/MITx/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+After activating venv, Python: /home/azureuser/MITx/venv/bin/python3
+5.0.6
+found new opportunity 0002009661
+Running query batch on payload size 1 
+Invoking Langchain
+Server error '500 Internal Server Error' for url 'http://localhost:5000/chain/invoke'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500 for Internal Server Error
+Page is none
+StatsModel object (84dcd533-8946-4f44-85ce-84fc10480b60)
+Script ended at Fri Jul 12 08:00:06 UTC 2024
