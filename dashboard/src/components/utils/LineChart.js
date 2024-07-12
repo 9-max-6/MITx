@@ -8,6 +8,11 @@ function LineChart() {
   const [data, setdata] = useState([]);
   const [chartData, setChartData] = useState({});
 
+  const getData = () => {
+    const myData = data.map((entry) => entry.new_opportunities);
+    return myData;
+  };
+
   const getStats = async (e) => {
     try {
       const response = await axios.get(
@@ -16,7 +21,7 @@ function LineChart() {
           withCredentials: true,
         }
       );
-      setdata(response.data);
+      setdata(response.data.reverse());
 
       setloaded(true);
     } catch (e) {
@@ -33,7 +38,6 @@ function LineChart() {
       labels: data.map((acolyte) => {
         const date = new Date(acolyte.date_created);
         const dateString = JSON.stringify(date);
-        console.log(dateString.split("T"));
         return dateString
           .split("T")[0]
           .split('"')[1]
@@ -44,7 +48,7 @@ function LineChart() {
       datasets: [
         {
           label: "Opportunities identified",
-          data: data.map((entry) => entry.new_opportunities),
+          data: getData(),
           backgroundColor: [
             "rgba(75, 192, 192, 1)",
             "rgba(236, 240, 241, 1)",

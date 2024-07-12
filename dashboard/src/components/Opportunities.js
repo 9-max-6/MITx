@@ -9,45 +9,61 @@ import OpportunityView from "./OpportunityView";
 import { AuthContext } from "./Auth/AuthContext";
 import "./styles/Opportunities.css";
 
+// register spinner
+newtonsCradle.register();
+
 function Opportunities() {
-  const [opps, setopps] = useState();
-  const [loaded, setloaded] = useState(false);
-  const [filters, setfilters] = useState(true);
-  const [selected, setselected] = useState("");
-  const [duration, setduration] = useState("all-time");
-  newtonsCradle.register();
+  // load authentication status
   const { setisAuthenticated } = useContext(AuthContext);
+
+  // load theme and navigation
   const theme = useTheme();
   const navigate = useNavigate();
 
+  // state for opportunitiy data
+  const [opps, setopps] = useState();
+  const [loaded, setloaded] = useState(false);
+
+  // state for filters
+  const [filters, setfilters] = useState(true);
+  const [selected, setselected] = useState("");
+  const [duration, setduration] = useState("all-time");
+
+  // load data effect
   useEffect(() => {
     getData(selected);
   }, [selected, duration]);
 
+  // set property property of filters
   const filtersManager = (filter) => {
-    setselected(filter);
     setloaded(false);
+    setselected(filter);
   };
 
+  // fetch data according to time
   const getTimedData = (data) => {
     if (duration === "all-time") {
       return data;
     } else if (duration === "last-24-hrs") {
       const opps = data.filter((item) => {
+        // last 24 hrs
         return new Date() - new Date(item.date_created) < 86400000;
       });
       return opps;
     } else if (duration === "last-48-hrs") {
+      // last 48 hrs
       const opps = data.filter((item) => {
         return new Date() - new Date(item.date_created) < 86400000 * 2;
       });
       return opps;
     } else if (duration === "last-one-week") {
+      // last one week
       const opps = data.filter((item) => {
         return new Date() - new Date(item.date_created) < 86400000 * 7;
       });
       return opps;
     } else if (duration === "last-one-month") {
+      // last one month
       const opps = data.filter((item) => {
         return new Date() - new Date(item.date_created) < 86400000 * 28;
       });
@@ -55,6 +71,7 @@ function Opportunities() {
     }
   };
 
+  // formal function to get data
   const getData = async (filter_selected) => {
     try {
       var url;
@@ -66,23 +83,22 @@ function Opportunities() {
       const response = await axios.get(url, {
         withCredentials: true,
       });
+      // run data through time filter
       setopps(getTimedData(response.data));
-      setloaded(true);
     } catch (error) {
-      if (error.status === "403") {
+      if (error.code === "ERR_BAD_REQUEST") {
         setisAuthenticated(false);
         localStorage.clear();
         navigate("/login");
       }
-      setopps([]);
-      console.log(error);
     } finally {
+      // at the end of the call setloaded true to see opps
       setloaded(true);
-      console.log(opps);
     }
   };
 
   const handleFilters = () => {
+    // toggle filters
     setfilters(!filters);
   };
 

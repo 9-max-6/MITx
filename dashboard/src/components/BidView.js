@@ -19,7 +19,11 @@ function BidView() {
         setbidsloaded(true);
       })
       .catch((error) => {
-        console.log(error);
+        if (error.code === "ERR_BAD_REQUEST") {
+          setisAuthenticated(false);
+          localStorage.clear();
+          navigate("/login");
+        }
       });
   };
   useEffect(() => {

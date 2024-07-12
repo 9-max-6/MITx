@@ -1,12 +1,8 @@
-import { Typography } from "@mui/material";
 import React from "react";
-import { Box, Button } from "@mui/material";
+import { Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { useTheme } from "@mui/material";
-import {
-  MinimalOpportunityView,
-  DetailedOpportunityView,
-} from "./SingleOpportunityView";
-import { useState } from "react";
+import { DetailedOpportunityView } from "./SingleOpportunityView";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 const OpportunityView = ({ opportunities }) => {

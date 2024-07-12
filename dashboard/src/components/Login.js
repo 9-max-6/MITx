@@ -4,44 +4,73 @@ import { useNavigate, Link } from "react-router-dom";
 import { Box, CardContent, Typography, Button } from "@mui/material";
 import { Card } from "@mui/material";
 import axios from "axios";
+import { typography } from "./typography";
 import "./styles/login.css";
 
 function Login() {
+  // Use the authcontent
   const { setisAuthenticated, setUsername, setUserid } =
     useContext(AuthContext);
+
+  // for navigation after login
   const navigate = useNavigate();
 
+  // login credentials state
   const [username, localsetusername] = useState();
   const [password, setpassword] = useState("");
+
+  // error messages state to be displayed when something goes wrong.
+  const [error, seterror] = useState("");
+
+  // error messages state to be displayed when something goes wrong.
+  const [showerror, setshowerror] = useState(false);
 
   function getLandingPage() {
     console.log("Redirecting to landing page");
     window.location.href = "https://mitx.mutukumaxwell.tech";
   }
   const handleLogin = async (e) => {
+    // prevent page from reloading
     e.preventDefault();
-    console.log("Hi");
+
+    // Don't show error when user attempts to login
+    setshowerror(false);
+
     const postData = {
       email: username,
       password: password,
     };
+
+    // async request to login
     axios
       .post("https://mitx.mutukumaxwell.tech/api/login/", postData, {
         withCredentials: true,
       })
       .then((response) => {
+        // authenticate
         setisAuthenticated(true);
-        console.log(response);
+
+        // Saved logged in user information
         setUsername(response.data.name);
         setUserid(response.data.id);
-        console.log(response);
+
+        // Save the logged in status in case the user logs in
         localStorage.setItem("authStatus", true);
         localStorage.setItem("userName", response.data.name);
         localStorage.setItem("userId", response.data.id);
+
+        // redirect to login
         navigate("/");
       })
       .catch((error) => {
-        console.error("Error posting data:", error);
+        if (error.code === "ERR_NETWORK") {
+          // network error
+          seterror(typography.messages.network_error);
+        } else {
+          // password error
+          seterror(typography.messages.login_error);
+        }
+        setshowerror(true);
       });
   };
 
@@ -138,6 +167,24 @@ function Login() {
                 Login
               </Button>
             </Box>
+            {showerror && (
+              <Box className="error">
+                <Typography
+                  sx={{
+                    fontSize: {
+                      sm: "12px",
+                      md: "12px",
+                      lg: "16px",
+                      xl: "16px",
+                    },
+                    fontWeight: "600",
+                    color: "#F50057",
+                  }}
+                >
+                  {error}
+                </Typography>
+              </Box>
+            )}
             <Box>
               {" "}
               <Typography
@@ -163,7 +210,7 @@ function Login() {
                 >
                   <span className="link-reset">here</span>
                 </Link>{" "}
-                to reset
+                to reset password
               </Typography>
             </Box>
           </form>
