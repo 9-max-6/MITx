@@ -9,5 +9,5 @@ api/management/commands/__pycache__/scraper_x.cpython-312.pyc
 lbuild.sh
 build.sh
 run_scraper.sh
-staticfiles
+db*
 
