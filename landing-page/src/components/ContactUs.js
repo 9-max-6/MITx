@@ -1,153 +1,131 @@
 import { Box, Card, CardContent, Typography, Button } from "@mui/material";
+import { useTheme } from "@mui/material";
 import { React, useState } from "react";
 import "./styles/contactus.css";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import XIcon from "@mui/icons-material/X";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 function ContactUs() {
-  const [email, setemail] = useState("");
-  const [name, setname] = useState("");
-  const [companysize, setcompanysize] = useState("");
-  const [companyname, setcompanyname] = useState("");
+  const theme = useTheme();
 
+  const [email, setemail] = useState("");
+
+  const gitlink = "https://github.com/9-max-6";
+  const linkedinlink = "https://www.linkedin.com/in/maxwell-mutuku/";
+  const xlink = "https://x.com/binary_bandit_";
+
+  const submitEmail = () => {
+    console.log(email);
+  };
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      width="1000px"
-      height="100vh"
-      margin="auto"
+      sx={{
+        width: {
+          xs: "500px",
+          sm: "500px",
+          lg: "700px",
+          xl: "800px",
+        },
+        marginX: "auto",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        height: "50vh",
+      }}
     >
-      <Box
-        className="coming-soon"
-        sx={{
-          alignSelf: "center",
-          height: "500px",
-          width: "100%",
-        }}
-      ></Box>
-      <Box
-        sx={{
-          alignSelf: "center",
-          my: "36px",
-        }}
-      >
-        <Typography
+      <Box sx={{ display: "flex" }}>
+        <Box>
+          <Typography
+            sx={{
+              color: "#6c63ff",
+              fontWeight: "700",
+              fontSize: "larger",
+            }}
+          >
+            Maxwell Mutuku
+          </Typography>
+          <Typography>
+            Max is a full-stack engineer and systems administrator based in
+            Nairobi, Kenya. He has a passion for programming and a strong,
+            unwavering commitment to building solutions that bring impact.
+          </Typography>
+          <Typography
+            sx={{
+              paddingTop: "20px",
+            }}
+          >
+            Check out his socials and github account below
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-start",
+              gap: "12px",
+              my: "30px",
+            }}
+          >
+            <Typography
+              component="a"
+              href={gitlink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubIcon />
+            </Typography>
+            <Typography
+              component="a"
+              href={xlink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <XIcon />
+            </Typography>
+            <Typography
+              component="a"
+              href={linkedinlink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInIcon />
+            </Typography>
+          </Box>
+        </Box>
+      </Box>
+      <Box>
+        <Box
           sx={{
-            color: "#6c63ff",
-            fontWeight: "700",
+            textAlign: "center",
+            width: "100%",
+            display: "flex",
+            flexDirection: "column",
+            gap: "12px",
           }}
-          variant="h3"
         >
-          Site under construction!
-        </Typography>
+          <Typography>
+            Enter you email address below and one of our sales representatives
+            will reach out.
+          </Typography>
+          <form>
+            <input
+              className="custom-button "
+              type="email"
+              placeholder="johndoe@gmail.com"
+              onChange={(e) => {
+                setemail(e.target.value);
+              }}
+            ></input>
+            <Button onClick={submitEmail}>
+              <ArrowForwardIcon />
+            </Button>
+          </form>
+        </Box>
+        <Box textAlign="center"></Box>
       </Box>
     </Box>
   );
 }
 
 export default ContactUs;
-
-// <Box className="hello"></Box>
-// <Card
-//   sx={{
-//     alignSelf: "center",
-//     height: "480px",
-//     width: "560px",
-//     gap: "36px",
-//   }}
-//   elevation={2}
-// >
-//   <CardContent>
-//     <form method="POST">
-//       <Box mb="24px" display="flex">
-//         <Typography
-//           sx={{
-//             alignSelf: "center",
-//           }}
-//           variant="h5"
-//         >
-//           Write to our marketing team
-//         </Typography>
-//       </Box>
-//       <Box
-//         sx={{
-//           display: "flex",
-//           flexDirection: "column",
-//         }}
-//       >
-//         <Typography variant="h6">Email</Typography>
-//         <input
-//           type="email"
-//           id="useremail"
-//           name="useremail"
-//           placeholder="  Your email"
-//           onChange={(e) => {
-//             setname(e.target.value);
-//           }}
-//         />
-//       </Box>
-//       <Box
-//         sx={{
-//           mt: "24px",
-//           display: "flex",
-//           flexDirection: "column",
-//         }}
-//       >
-//         <Typography>Company</Typography>
-
-//         <input
-//           type="text"
-//           id="companyname"
-//           name="companyname"
-//           placeholder=" Name of your company"
-//           onChange={(e) => {
-//             setcompanyname(e.target.value);
-//           }}
-//         />
-//       </Box>
-//       <Box
-//         sx={{
-//           mt: "24px",
-//           display: "flex",
-//           flexDirection: "column",
-//         }}
-//       >
-//         <Typography>Company</Typography>
-
-//         <input
-//           type=""
-//           id="companyname"
-//           name="companyname"
-//           placeholder=" Name of your company"
-//           onChange={(e) => {
-//             setcompanyname(e.target.value);
-//           }}
-//         />
-//       </Box>
-//       <Box
-//         sx={{
-//           my: "20px",
-//           position: "relative",
-//         }}
-//       >
-//         <Button
-//           sx={{
-//             backgroundColor: "#6c63ff",
-//             color: "white",
-//             padding: "12px",
-
-//             paddingX: "24px",
-//             position: "absolute",
-//             right: "12px",
-//             "&:hover": {
-//               backgroundColor: "#1f1650",
-//               color: "white",
-//               transition: "0.3s ease-in-out",
-//             },
-//           }}
-//         >
-//           Submit
-//         </Button>
-//       </Box>
-//     </form>
-//   </CardContent>
-// </Card>

@@ -1,5 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import XIcon from "@mui/icons-material/X";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function Footer() {
   return (
@@ -11,7 +14,7 @@ function Footer() {
         width: "100%",
       }}
     >
-      <Typography>Created by Maxwell</Typography>
+      <Typography>&copy; 2024 MITx. All rights reserved.</Typography>
     </Box>
   );
 }

@@ -102,9 +102,8 @@ function Home() {
           <Button
             sx={{
               boxSizing: "border-box",
-              color: "#1f1650",
-              border: "2px solid #1f1650",
-              backgroundColor: "inherit",
+              color: "white",
+              backgroundColor: "#6c63ff",
               fontSize: {
                 md: "small",
                 lg: "large",
@@ -114,10 +113,12 @@ function Home() {
                 lg: "24px",
               },
               "&:hover": {
-                backgroundColor: "#1f1650",
+                boxShadow: "0px 0px 15px 4px rgba(108,99,255,0.5)",
+                WebkitBoxShadow: "0px 0px 15px 4px rgba(108,99,255,0.5)",
+                MozBoxShadow: "0px 0px 15px 4px rgba(108,99,255,0.5)",
                 color: "white",
+                backgroundColor: "#6c63ff",
                 transition: "0.3s ease-in-out",
-                border: "2px solid #1f1650",
               },
             }}
           >

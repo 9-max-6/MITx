@@ -31,7 +31,7 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link to="/ai">
+          <Link to="/features">
             <Button
               sx={{
                 color: "#1f1650",
@@ -42,7 +42,7 @@ function Navbar() {
                 "&:hover": { backgroundColor: "#6c63ff", color: "white" },
               }}
             >
-              AI
+              Features
             </Button>
           </Link>
         </li>
